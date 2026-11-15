@@ -6,6 +6,7 @@ import { Field } from "./Field";
 import { LayerSection } from "./LayerSection";
 import { Place } from "./Place";
 import { list } from "./lib";
+import { Wave, Words, startScrollFx } from "./Fx";
 import { Descent } from "./Descent";
 import { Marquee, Paint, PillNav, ScrubText, Sticker, Uses, magnetize, useParallax } from "./Flair";
 import { calm, startSmoothScroll, watchReveals } from "./motion";
@@ -75,6 +76,7 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => (topic ? watchReveals() : undefined), [topic]);
+  useEffect(() => (topic ? startScrollFx() : undefined), [topic]);
   useEffect(() => magnetize(), []);
   const heroRef = useRef<HTMLElement>(null);
   useParallax(heroRef, topic);
@@ -205,9 +207,11 @@ export default function App() {
             <Place key={`place-${topic.slug}`} topic={topic} />
 
             <section className="method tone-0" id="method">
+              <Wave fill="#08202d" />
               <div className="wrap">
-                <h2>How this was measured</h2>
-                <ol className="steps">
+                <Words text="How this was measured" />
+                <span className="steps-line" aria-hidden="true" />
+                <ol className="steps" data-reveal>
                   <li>
                     <h3>Ask</h3>
                     <p>
@@ -242,7 +246,7 @@ export default function App() {
                 <div className="method-grid">
                   <div>
                     <h3>Against the published baseline</h3>
-                    <table className="compare">
+                    <table className="compare" data-reveal>
                       <thead>
                         <tr>
                           <th scope="col">Prompting method</th>
@@ -281,7 +285,7 @@ export default function App() {
                   </div>
                   <div>
                     <h3>What this does not show</h3>
-                    <ul className="limits">
+                    <ul className="limits" data-reveal>
                       <li>Deeper is not better. Depth says how far an answer is from the default, not whether it is good.</li>
                       <li>Each topic was run once. The counts will move on a rerun.</li>
                       <li>The tagger is a model and can mislabel. Answers it could not tag are counted, not hidden.</li>
@@ -302,6 +306,12 @@ export default function App() {
       <PillNav ready={!!topic} />
 
       <footer className="foot tone-0">
+        <p className="foot-word" aria-hidden="true">
+          {"Offmap".split("").map((c, i) => (
+            <span key={i}>{c}</span>
+          ))}
+          <i />
+        </p>
         <div className="wrap foot-row">
           <p>Offmap, built by Ashwin Pareek for SLAY HACKS 2026.</p>
           <p>

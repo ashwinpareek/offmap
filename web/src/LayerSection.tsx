@@ -2,6 +2,9 @@ import { useMemo, useState } from "react";
 import type { Idea, Layer, Topic } from "./types";
 import { depthName, label, list, lower, plural } from "./lib";
 import { scrollToId } from "./motion";
+import { Count, Typed, Wave, Words } from "./Fx";
+
+const TONE_FILL = ["#f1f4f2", "#d2e3e2", "#8fbbc3", "#0f3d52"];
 
 const HEADINGS = [
   "What everyone gets",
@@ -97,7 +100,7 @@ function Composition({ layer, hasNext }: { layer: Layer; hasNext: boolean }) {
             <span className="bar-track">
               <span className="bar-fill" style={{ width: `${(count / max) * 100}%` }} />
             </span>
-            <span className="bar-count">{count}</span>
+            <span className="bar-count"><Count n={count} /></span>
           </div>
         ))}
       </div>
@@ -112,9 +115,9 @@ function Composition({ layer, hasNext }: { layer: Layer; hasNext: boolean }) {
 
 function IdeaRows({ ideas, models, dropped }: { ideas: Idea[]; models: string[]; dropped?: boolean }) {
   return (
-    <ul className={`ideas${dropped ? " ideas-dropped" : ""}`}>
+    <ul className={`ideas${dropped ? " ideas-dropped" : ""}`} data-reveal={dropped ? undefined : ""}>
       {ideas.map((idea, i) => (
-        <li key={i}>
+        <li key={i} style={{ ["--i" as string]: i % 9 }}>
           {idea.n && <h4>{idea.n}</h4>}
           <p>{idea.t}</p>
           <p className="idea-meta">
@@ -159,23 +162,28 @@ export function LayerSection({ topic, layer, deepest }: { topic: Topic; layer: L
 
   return (
     <section className={`layer tone-${Math.min(depth, 3)}`} id={`depth-${depth}`}>
+      {depth > 0 && <Wave fill={TONE_FILL[Math.min(depth - 1, 3)]} />}
       <div className="wrap layer-grid">
         <Gauge depth={depth} deepest={deepest} />
 
         <div className="layer-body">
-          <h2 data-reveal className="rise">{HEADINGS[depth] ?? "Deeper again"}</h2>
+          <Words text={HEADINGS[depth] ?? "Deeper again"} />
 
           {depth === 0 ? (
             <p className="lede">
-              Only {surface.stats.distinct} of {topic.vocabulary} approaches show up at all, and {topic.neverUsedAtSurface}{" "}
-              never appear once.
-              {topic.topRevenue.tag &&
-                ` ${topic.topRevenue.count} of ${surface.stats.n} answers make money the same way: ${topic.topRevenue.tag}.`}
+              Only <Count n={surface.stats.distinct} /> of {topic.vocabulary} approaches show up at all, and{" "}
+              <Count n={topic.neverUsedAtSurface} /> never appear once.
+              {topic.topRevenue.tag && (
+                <>
+                  {" "}
+                  <Count n={topic.topRevenue.count} /> of {surface.stats.n} answers make money the same way: {topic.topRevenue.tag}.
+                </>
+              )}
             </p>
           ) : (
             <>
               <p className="lede">
-                Same prompt, with {plural(layer.ruledOut.length, "approach", "approaches")} ruled out. {layer.asked} answers
+                Same prompt, with <Count n={layer.ruledOut.length} /> approaches ruled out. {layer.asked} answers
                 came back and each one was tagged again before being kept.
               </p>
               <div className="ruled" data-reveal>
@@ -224,10 +232,10 @@ export function LayerSection({ topic, layer, deepest }: { topic: Topic; layer: L
             </div>
           </div>
 
-          <div className="take">
+          <div className="take" data-reveal>
             <div>
               <h3>Take this depth with you</h3>
-              <p className="take-prompt">{ruleOutPrompt}</p>
+              <Typed className="take-prompt" text={ruleOutPrompt} />
             </div>
             <button className="copy" data-magnetic onClick={copy}>
               {copied ? "Copied" : "Copy this prompt"}

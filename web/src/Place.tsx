@@ -2,6 +2,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import type { Topic } from "./types";
 import { depthName, label, lower, plural } from "./lib";
+import { Wave, Words } from "./Fx";
 
 type Result = { tags: string[]; depth: number | null; note: string };
 
@@ -85,9 +86,10 @@ export function Place({ topic }: { topic: Topic }) {
 
   return (
     <section className="place tone-4" id="place">
+      <Wave fill="#0f3d52" />
       <div className="wrap place-grid">
         <div>
-          <h2>Where does your idea sit?</h2>
+          <Words text="Where does your idea sit?" />
           <p className="lede">
             Describe a startup idea for {topic.topic}. One model call tags its approach, using the same list of{" "}
             {topic.vocabulary}, and the layers above say how far from the default it is.
@@ -105,7 +107,7 @@ export function Place({ topic }: { topic: Topic }) {
             placeholder={`An idea for ${topic.topic}`}
           />
           <div className="place-actions">
-            <button className="go" data-magnetic type="submit" disabled={!ready || busy}>
+            <button className={`go${busy ? " is-busy" : ""}`} data-magnetic type="submit" disabled={!ready || busy}>
               {busy ? "Tagging" : "Find its depth"}
             </button>
             {!ready && text.length > 0 && <span className="fine">A full sentence gives the tagger enough to go on.</span>}
@@ -115,8 +117,15 @@ export function Place({ topic }: { topic: Topic }) {
             {problem && <p className="notice">{problem}</p>}
             {result && (
               <>
-                <p className="verdict-depth">{result.depth === null ? "Off the map" : depthName(result.depth)}</p>
-                <div className="verdict-scale" aria-hidden="true">
+                <p className="verdict-depth">
+                  {(result.depth === null ? "Off the map" : depthName(result.depth)).split(" ").map((w, i) => (
+                    <span className="vw" key={i} style={{ ["--i" as string]: i }}>
+                      {w}{" "}
+                    </span>
+                  ))}
+                </p>
+                <div className="verdict-scale" aria-hidden="true" style={{ ["--at" as string]: (result.depth ?? deepest + 1) / (deepest + 2) }}>
+                  <b className="diver" />
                   {Array.from({ length: deepest + 2 }, (_, d) => (
                     <span key={d} className={(result.depth ?? deepest + 1) === d ? "is-here" : undefined}>
                       {d > deepest ? "off" : d}

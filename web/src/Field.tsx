@@ -20,7 +20,7 @@ const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)"
  * Every default answer as one square. First in the order they were asked, then
  * grouped by approach: the same squares, so the pile-up is something you watch happen.
  */
-export function Field({ layer, models }: { layer: Layer; models: string[] }) {
+export function Field({ layer, models, wait = 1100 }: { layer: Layer; models: string[]; wait?: number }) {
   const cols = useColumns();
   const ideas = layer.ideas;
   const rank = useMemo(() => new Map(layer.stats.primary.map(([tag], i) => [tag, i])), [layer]);
@@ -57,7 +57,7 @@ export function Field({ layer, models }: { layer: Layer; models: string[] }) {
 
   useEffect(() => {
     if (grouped) return;
-    const t = window.setTimeout(() => setGrouped(true), 1100);
+    const t = window.setTimeout(() => setGrouped(true), wait);
     return () => window.clearTimeout(t);
     // only on first paint: after that the reader is in control
     // eslint-disable-next-line react-hooks/exhaustive-deps

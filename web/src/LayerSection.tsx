@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import type { Idea, Layer, Topic } from "./types";
 import { depthName, label, list, lower, plural } from "./lib";
+import { scrollToId } from "./motion";
 
 const HEADINGS = [
   "What everyone gets",
@@ -20,11 +21,7 @@ function interleave(ideas: Idea[]): Idea[] {
 }
 
 function Gauge({ depth, deepest }: { depth: number; deepest: number }) {
-  const jump = (d: number) => {
-    const el = document.getElementById(`depth-${d}`);
-    const calm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    el?.scrollIntoView({ behavior: calm ? "auto" : "smooth", block: "start" });
-  };
+  const jump = (d: number) => scrollToId(`depth-${d}`);
   return (
     <aside className="gauge">
       <div className="gauge-stick">
@@ -53,16 +50,16 @@ function Gauge({ depth, deepest }: { depth: number; deepest: number }) {
 
 function Marks({ layer }: { layer: Layer }) {
   return (
-    <div className="marks">
+    <div className="marks" data-reveal>
       <div className="marks-row" aria-hidden="true">
         {Array.from({ length: layer.kept }, (_, i) => (
-          <span key={`k${i}`} className="mk mk-kept" />
+          <span key={`k${i}`} className="mk mk-kept" style={{ ["--i" as string]: i }} />
         ))}
         {Array.from({ length: layer.dropped }, (_, i) => (
-          <span key={`d${i}`} className="mk mk-dropped" />
+          <span key={`d${i}`} className="mk mk-dropped" style={{ ["--i" as string]: layer.kept + i }} />
         ))}
         {Array.from({ length: layer.untagged }, (_, i) => (
-          <span key={`u${i}`} className="mk mk-untagged" />
+          <span key={`u${i}`} className="mk mk-untagged" style={{ ["--i" as string]: layer.kept + layer.dropped + i }} />
         ))}
       </div>
       <p className="marks-key">
@@ -90,12 +87,12 @@ function Composition({ layer, hasNext }: { layer: Layer; hasNext: boolean }) {
   const cut = (banShare * n) / max;
   const common = new Set(layer.common);
   return (
-    <div className="comp">
+    <div className="comp" data-reveal>
       <h3>{layer.depth === 0 ? "What the answers use" : "What the kept answers use"}</h3>
       <div className="bars" style={{ ["--cut-n" as string]: Math.min(cut, 1) }}>
         {hasNext && cut <= 1 && <span className="bars-cut" aria-hidden="true" />}
-        {shown.map(([tag, count]) => (
-          <div key={tag} className={`bar${hasNext && common.has(tag) ? " is-common" : ""}`}>
+        {shown.map(([tag, count], i) => (
+          <div key={tag} style={{ ["--i" as string]: i }} className={`bar${hasNext && common.has(tag) ? " is-common" : ""}`}>
             <span className="bar-name">{label(tag)}</span>
             <span className="bar-track">
               <span className="bar-fill" style={{ width: `${(count / max) * 100}%` }} />
@@ -142,6 +139,17 @@ export function LayerSection({ topic, layer, deepest }: { topic: Topic; layer: L
   const ordered = useMemo(() => interleave(layer.ideas), [layer]);
   const [count, setCount] = useState(3);
   const [showDropped, setShowDropped] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const ruleOutPrompt = `Give me one startup idea for ${topic.topic}. Describe it in two or three sentences. Do not use any of these overused approaches: ${[...layer.ruledOut, ...layer.common].map((t) => t.replace(/_/g, " ")).join("; ")}.`;
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(ruleOutPrompt);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2200);
+    } catch {
+      setCopied(false);
+    }
+  };
   const surface = topic.layers[0];
 
   // which earlier layer each ruled-out approach came from
@@ -155,7 +163,7 @@ export function LayerSection({ topic, layer, deepest }: { topic: Topic; layer: L
         <Gauge depth={depth} deepest={deepest} />
 
         <div className="layer-body">
-          <h2>{HEADINGS[depth] ?? "Deeper again"}</h2>
+          <h2 data-reveal className="rise">{HEADINGS[depth] ?? "Deeper again"}</h2>
 
           {depth === 0 ? (
             <p className="lede">
@@ -170,14 +178,16 @@ export function LayerSection({ topic, layer, deepest }: { topic: Topic; layer: L
                 Same prompt, with {plural(layer.ruledOut.length, "approach", "approaches")} ruled out. {layer.asked} answers
                 came back and each one was tagged again before being kept.
               </p>
-              <div className="ruled">
+              <div className="ruled" data-reveal>
                 <h3>Ruled out before asking</h3>
                 {ruledGroups.map((g) => (
                   <p key={g.from}>
                     <span className="ruled-from">{g.from === 0 ? "From the surface" : `From layer ${g.from}`}</span>
                     <span className="ruled-tags">
-                      {g.tags.map((t) => (
-                        <s key={t}>{label(t)}</s>
+                      {g.tags.map((t, i) => (
+                        <span className="struck" key={t} style={{ ["--i" as string]: i }}>
+                          {label(t)}
+                        </span>
                       ))}
                     </span>
                   </p>
@@ -212,6 +222,16 @@ export function LayerSection({ topic, layer, deepest }: { topic: Topic; layer: L
               </div>
               {showDropped && <IdeaRows ideas={layer.droppedIdeas} models={topic.models} dropped />}
             </div>
+          </div>
+
+          <div className="take">
+            <div>
+              <h3>Take this depth with you</h3>
+              <p className="take-prompt">{ruleOutPrompt}</p>
+            </div>
+            <button className="copy" onClick={copy}>
+              {copied ? "Copied" : "Copy this prompt"}
+            </button>
           </div>
 
           {hasNext ? (

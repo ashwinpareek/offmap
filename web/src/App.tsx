@@ -6,6 +6,8 @@ import { Field } from "./Field";
 import { LayerSection } from "./LayerSection";
 import { Place } from "./Place";
 import { list } from "./lib";
+import { Descent } from "./Descent";
+import { calm, scrollToId, startSmoothScroll, watchReveals } from "./motion";
 
 const topics = indexJson as TopicIndex;
 const loaders = import.meta.glob<{ default: Topic }>("./data/topics/*.json");
@@ -63,12 +65,38 @@ export default function App() {
     }
   };
 
+  const [intro, setIntro] = useState(() => !calm());
+  useEffect(() => {
+    startSmoothScroll();
+    if (!intro) return;
+    const t = window.setTimeout(() => setIntro(false), 2300);
+    return () => window.clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => (topic ? watchReveals() : undefined), [topic]);
+
+  const go = (id: string) => (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    scrollToId(id);
+  };
+
   const surface: Layer | undefined = topic?.layers[0];
   const deepest = topic ? topic.layers[topic.layers.length - 1].depth : 0;
   const totalAsked = useMemo(() => topic?.layers.reduce((n, l) => n + l.asked, 0) ?? 0, [topic]);
 
   return (
     <>
+      {intro && (
+        <div className="intro" aria-hidden="true">
+          <div className="intro-lockup">
+            <svg viewBox="0 0 32 32">
+              <rect className="intro-box" x="3" y="3" width="19" height="19" pathLength="1" />
+              <rect className="intro-dot" x="22" y="22" width="8.5" height="8.5" />
+            </svg>
+            <span>Offmap</span>
+          </div>
+        </div>
+      )}
       <header className="top tone-0" id="top">
         <div className="wrap top-row">
           <a className="brand" href="#top" aria-label="Offmap, back to top">
@@ -76,9 +104,9 @@ export default function App() {
             <span>Offmap</span>
           </a>
           <nav className="top-nav" aria-label="Page">
-            <a href="#depth-0">Layers</a>
-            <a href="#place">Your idea</a>
-            <a href="#method">Method</a>
+            <a href="#depth-0" onClick={go("depth-0")}>Layers</a>
+            <a href="#place" onClick={go("place")}>Your idea</a>
+            <a href="#method" onClick={go("method")}>Method</a>
             <a href={REPO} target="_blank" rel="noreferrer">
               GitHub
             </a>
@@ -89,18 +117,26 @@ export default function App() {
       <main>
         <section className="hero tone-0">
           <div className="wrap">
-            <p className="asked">
-              Three AI models were each sent this, {surface ? surface.asked / (topic?.models.length || 1) : 50} times:
-            </p>
-            <p className="prompt">
-              “Give me one startup idea for{" "}
-              {topics.length > 1 ? (
-                <span className="prompt-topic">{topic?.topic ?? topics.find((t) => t.slug === slug)?.topic}</span>
-              ) : (
-                (topic?.topic ?? topics[0].topic)
-              )}
-              .”
-            </p>
+            <h1 className="lines">
+              {["Every AI gives everyone", "the same idea.", "Offmap digs past it."].map((line, i) => (
+                <span key={line} className="line" style={{ ["--i" as string]: i }}>
+                  <span>{line}</span>
+                </span>
+              ))}
+            </h1>
+            <div className="hero-sub">
+              <p>
+                Pick a topic. Offmap asks three AI models the same question again and again, finds the answers they
+                all fall back on, rules those out and asks again. You get the ideas that sit past the obvious ones,
+                each one checked.
+              </p>
+              <ul className="uses">
+                <li>See the answer everyone else is getting</li>
+                <li>Take ideas from one, two or three layers down</li>
+                <li>Copy the prompt that gets you there in any AI</li>
+                <li>Check how common your own idea is</li>
+              </ul>
+            </div>
 
             {topics.length > 1 && (
               <div className="topics" role="radiogroup" aria-label="Topic">
@@ -122,11 +158,17 @@ export default function App() {
 
             {topic && surface && (
               <>
-                <h1>
-                  {surface.stats.n} answers came back. {surface.stats.top3} of them are built on the same three
-                  approaches.
-                </h1>
-                <Field key={topic.slug} layer={surface} models={topic.models} />
+                <div className="proof">
+                  <p className="asked">
+                    We sent this to {topic.models.length} models, {surface.asked / topic.models.length} times each:
+                  </p>
+                  <p className="prompt">“Give me one startup idea for {topic.topic}.”</p>
+                  <p className="proof-line">
+                    {surface.stats.n} answers came back. {surface.stats.top3} of them are built on the same three
+                    approaches.
+                  </p>
+                </div>
+                <Field key={topic.slug} layer={surface} models={topic.models} wait={intro ? 3200 : 900} />
               </>
             )}
           </div>
@@ -134,18 +176,7 @@ export default function App() {
 
         {topic && (
           <>
-            <section className="bridge tone-0">
-              <div className="wrap bridge-grid">
-                <p>
-                  Offmap treats that pile-up as a map. It rules out the ground every model lands on, asks again, and
-                  checks each new answer before showing it. Then it repeats, one layer at a time.
-                </p>
-                <p>
-                  Below, {totalAsked} answers across {topic.layers.length} layers. Nothing shown at a depth uses an
-                  approach from any layer above it.
-                </p>
-              </div>
-            </section>
+            {!calm() && <Descent key={`descent-${topic.slug}`} topic={topic} />}
 
             {topic.layers.map((layer) => (
               <LayerSection key={`${topic.slug}-${layer.depth}`} topic={topic} layer={layer} deepest={deepest} />

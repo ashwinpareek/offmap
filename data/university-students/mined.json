@@ -1,0 +1,566 @@
+{
+  "stats": {
+    "n_ideas": 150,
+    "distinct_primary_mechanisms": 11,
+    "effective_number_of_mechanisms": 4.84,
+    "top3_primary_mechanism_share": 0.8067,
+    "catch_all_share": 0.0
+  },
+  "mechanism_frequency": [
+    {
+      "tag": "marketplace_two_sided",
+      "count": 79,
+      "share": 0.5267
+    },
+    {
+      "tag": "peer_to_peer_exchange",
+      "count": 67,
+      "share": 0.4467
+    },
+    {
+      "tag": "verification_trust_reputation",
+      "count": 39,
+      "share": 0.26
+    },
+    {
+      "tag": "recommendation_matching",
+      "count": 29,
+      "share": 0.1933
+    },
+    {
+      "tag": "rental_sharing",
+      "count": 26,
+      "share": 0.1733
+    },
+    {
+      "tag": "delivery_logistics",
+      "count": 10,
+      "share": 0.0667
+    },
+    {
+      "tag": "ai_tutor_coach",
+      "count": 9,
+      "share": 0.06
+    },
+    {
+      "tag": "on_demand_gig_service",
+      "count": 8,
+      "share": 0.0533
+    },
+    {
+      "tag": "gamification",
+      "count": 8,
+      "share": 0.0533
+    },
+    {
+      "tag": "scheduling_planning",
+      "count": 7,
+      "share": 0.0467
+    },
+    {
+      "tag": "mentorship_expert_network",
+      "count": 4,
+      "share": 0.0267
+    },
+    {
+      "tag": "summarization_notes",
+      "count": 3,
+      "share": 0.02
+    },
+    {
+      "tag": "hiring_talent_matching",
+      "count": 3,
+      "share": 0.02
+    },
+    {
+      "tag": "search_knowledge_base",
+      "count": 2,
+      "share": 0.0133
+    },
+    {
+      "tag": "chatbot_assistant",
+      "count": 1,
+      "share": 0.0067
+    },
+    {
+      "tag": "subscription_box_physical",
+      "count": 1,
+      "share": 0.0067
+    },
+    {
+      "tag": "automation_workflow",
+      "count": 1,
+      "share": 0.0067
+    },
+    {
+      "tag": "payments_fintech_tool",
+      "count": 1,
+      "share": 0.0067
+    },
+    {
+      "tag": "community_social_network",
+      "count": 1,
+      "share": 0.0067
+    },
+    {
+      "tag": "booking_reservation",
+      "count": 1,
+      "share": 0.0067
+    }
+  ],
+  "customer_frequency": [
+    {
+      "tag": "students",
+      "count": 150,
+      "share": 1.0
+    }
+  ],
+  "revenue_frequency": [
+    {
+      "tag": "transaction_fee_commission",
+      "count": 126,
+      "share": 0.84
+    },
+    {
+      "tag": "unspecified",
+      "count": 18,
+      "share": 0.12
+    },
+    {
+      "tag": "subscription",
+      "count": 3,
+      "share": 0.02
+    },
+    {
+      "tag": "freemium",
+      "count": 2,
+      "share": 0.0133
+    },
+    {
+      "tag": "b2b_license_saas",
+      "count": 1,
+      "share": 0.0067
+    }
+  ],
+  "form_frequency": [
+    {
+      "tag": "mobile_app",
+      "count": 88,
+      "share": 0.5867
+    },
+    {
+      "tag": "web_platform",
+      "count": 62,
+      "share": 0.4133
+    }
+  ],
+  "bans": [
+    {
+      "tag": "marketplace_two_sided",
+      "count": 79,
+      "share": 0.5267
+    },
+    {
+      "tag": "peer_to_peer_exchange",
+      "count": 67,
+      "share": 0.4467
+    },
+    {
+      "tag": "verification_trust_reputation",
+      "count": 39,
+      "share": 0.26
+    },
+    {
+      "tag": "recommendation_matching",
+      "count": 29,
+      "share": 0.1933
+    },
+    {
+      "tag": "rental_sharing",
+      "count": 26,
+      "share": 0.1733
+    }
+  ],
+  "structural": [
+    {
+      "field": "revenue",
+      "tag": "transaction_fee_commission",
+      "count": 126,
+      "share": 0.84
+    },
+    {
+      "field": "form",
+      "tag": "mobile_app",
+      "count": 88,
+      "share": 0.5867
+    }
+  ],
+  "holes": [
+    {
+      "mechanism": "search_knowledge_base",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 2,
+      "customer_count": 150,
+      "expected_if_independent": 2.0,
+      "observed": 2
+    },
+    {
+      "mechanism": "chatbot_assistant",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 1,
+      "customer_count": 150,
+      "expected_if_independent": 1.0,
+      "observed": 1
+    },
+    {
+      "mechanism": "booking_reservation",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 1,
+      "customer_count": 150,
+      "expected_if_independent": 1.0,
+      "observed": 1
+    },
+    {
+      "mechanism": "community_social_network",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 1,
+      "customer_count": 150,
+      "expected_if_independent": 1.0,
+      "observed": 1
+    },
+    {
+      "mechanism": "automation_workflow",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 1,
+      "customer_count": 150,
+      "expected_if_independent": 1.0,
+      "observed": 1
+    },
+    {
+      "mechanism": "payments_fintech_tool",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 1,
+      "customer_count": 150,
+      "expected_if_independent": 1.0,
+      "observed": 1
+    },
+    {
+      "mechanism": "subscription_box_physical",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 1,
+      "customer_count": 150,
+      "expected_if_independent": 1.0,
+      "observed": 1
+    },
+    {
+      "mechanism": "data_pipeline_labeling",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "accessibility_adaptation",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "ar_vr_immersive",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "simulation_digital_twin",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "events_meetups",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "developer_tool_api",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "mental_wellness",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "nutrition_meal_planning",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "optimization_routing",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "open_data_public_goods",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "voice_interface",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "wearable_sensor",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "insurance_risk",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "physical_space_venue",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "health_tracking",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "monitoring_alerting",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "energy_management",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "human_concierge_service",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "repair_maintenance",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "crowdfunding_pooling",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "group_buying_cooperative",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "precision_agriculture",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "travel_itinerary",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "habit_tracking",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "communication_async_video",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "analytics_dashboard",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "compliance_audit",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "no_code_builder",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "game_entertainment",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "budgeting_finance_tracker",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "hardware_device_iot",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "supply_chain_traceability",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    },
+    {
+      "mechanism": "journaling_reflection",
+      "customer": "students",
+      "kind": "neglected_mechanism",
+      "mechanism_count": 0,
+      "customer_count": 150,
+      "expected_if_independent": 0.0,
+      "observed": 0
+    }
+  ],
+  "unused_mechanisms": 48,
+  "params": {
+    "ban_share": 0.15,
+    "structural_share": 0.4,
+    "min_support": 3
+  }
+}

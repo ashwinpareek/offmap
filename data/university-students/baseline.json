@@ -1,0 +1,2112 @@
+{
+  "topic": "university students",
+  "models": [
+    "gemini:gemini-3.5-flash-lite",
+    "groq:openai/gpt-oss-120b",
+    "groq:qwen/qwen3.8-27b"
+  ],
+  "tagger": "gemini:gemini-flash-lite-latest",
+  "ideas": [
+    {
+      "id": "gemini:gemini-3.5-flash-lite#0",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**StudySwap** is a peer-to-peer marketplace where university students can buy and sell verified class notes, study guides, and past exams specific to their professors and courses. By turning academic effort into passive income, top students get rewarded while struggling classmates gain access to localized, reliable study materials.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#1",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**SubletSync** is a verified, peer-to-peer housing marketplace designed exclusively for university students looking to sublease their apartments during summer internships or study abroad programs. By integrating with university emails and social logins, it eliminates the safety risks of Craigslist and the high fees of traditional housing apps, making campus subletting seamless and secure.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#2",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**RoomMate AI** is a matchmaking app that pairs university students with compatible roommates based on study habits, sleep schedules, and cleanliness preferences rather than just random assignment. It uses a compatibility quiz and in-app chat to help students find off-campus housing partners and avoid living nightmares before the semester starts.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "chatbot_assistant"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#3",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCrib** is a peer-to-peer marketplace designed specifically for university students to buy, sell, and rent textbooks, dorm furniture, and tech exclusively within their campus network. By verifying users through their university email, it eliminates the safety risks and high shipping costs of platforms like Facebook Marketplace or eBay. It creates a localized, trusted circular economy that helps students save money and declutter before moving out.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#4",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**RoomieMatch** is a hyper-local roommate and sublet marketplace exclusively for university students, using university email verification for safety. It pairs students based on sleep schedules, study habits, and cleanliness preferences rather than just budget. The platform eliminates housing stress by integrating campus maps and direct chat features tailored to the academic calendar.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#5",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**RoomieMatch** is a hyper-local roommate finder app that uses university class schedules, sleep habits, and lifestyle quizzes to pair compatible students living off-campus. The platform verifies student IDs to ensure safety and includes an in-app roommate agreement builder to prevent common living disputes.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#6",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**SubleaseSync** is a hyper-local marketplace that matches students looking to sublease their off-campus apartments during summer or study-abroad terms with incoming exchange students and peers needing short-term housing. The platform handles verified university-ID logins, automated contract generation, and escrow payments to prevent scams and friction. It solves a massive pain point by turning dead-rent months into seamless, secure housing swaps for the student community.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#7",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCart** is a peer-to-peer micro-delivery marketplace exclusively for university students to buy and sell textbooks, used dorm furniture, and leftover meal swipes within walking distance. By keeping transactions on-campus and utilizing students between classes as couriers, it eliminates high shipping costs and long delivery delays. It’s a hyper-local circular economy built by students, for students.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#8",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCrave** is a peer-to-peer food delivery app exclusively for university students living on campus. Students without meal plans can order homemade meals or late-night snacks from talented student cooks in their own dorms, while fellow students earn extra cash by delivering them on foot or scooter.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "delivery_logistics"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#9",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCrib** is a peer-to-peer marketplace designed specifically for university students to buy, sell, and rent textbooks, dorm furniture, and tech within their own campus community. By utilizing university email verification and secure in-app payments, it eliminates the safety risks and high fees of Facebook Marketplace and eBay. Students save money at the beginning of the semester and make quick cash at the end, all while keeping transactions local and trusted.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#10",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**SubletSync** is a verified peer-to-peer housing marketplace designed exclusively for university students looking for short-term subleases during study-abroad terms or summer internships. The platform integrates with university emails to ensure safety, automates lease transfers, and matches roommates based on lifestyle and study habits.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#11",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**StudySync** is a peer-to-peer micro-tutoring platform that connects university students who are struggling in specific classes with high-performing peers who just aced them. It operates on a flexible, gig-economy model, allowing student tutors to set their own hours and rates while helping classmates affordably master difficult coursework.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "on_demand_gig_service"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#12",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**DormDrop** is a peer-to-peer campus delivery service that lets students order snacks, coffee, and study supplies from on-campus spots, delivered directly to their dorm room door by fellow students in 15 minutes or less. It creates flexible, on-the-ground micro-jobs for students while solving the ultimate late-night study laziness.",
+      "tags": {
+        "mechanism": [
+          "delivery_logistics",
+          "on_demand_gig_service"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#13",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**NoteSwap** is a peer-to-peer marketplace where university students can buy and sell verified lecture notes, study guides, and summaries specific to their exact classes and professors. By gamifying the upload process with crypto or cash rewards, it ensures students always have access to affordable, top-tier study materials tailored to their current semester.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "gamification"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#14",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCart** is a peer-to-peer delivery app that lets university students make extra cash by dropping off groceries, food, or textbooks to classmates while already walking across campus. By leveraging hyper-local student couriers, it offers faster and cheaper delivery than major apps while keeping jobs within the student community.",
+      "tags": {
+        "mechanism": [
+          "on_demand_gig_service",
+          "delivery_logistics"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#15",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**SubletSync** is a verified peer-to-peer marketplace designed specifically for university students to buy, sell, or sublease textbook bundles, furniture, and apartment leases within their own campus community. By utilizing university email verification and social matching, it eliminates the safety risks and scams of Facebook Marketplace while keeping transactions hyper-local.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#16",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**NoteSwap** is a peer-to-peer marketplace where university students can buy and sell verified, high-quality lecture notes, study guides, and past exams specific to their exact professors and courses. By gamifying the upload process with cash rewards and crypto-credits, it incentivizes top students to share their knowledge while helping struggling peers pass classes efficiently.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "gamification"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#17",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**StudySwap** is a peer-to-peer marketplace where university students can buy and sell verified class notes, study guides, and flashcard decks specific to their exact professors and syllabi. By crowdsourcing academic content, it helps struggling students grasp difficult material quickly while enabling top-performing students to monetize their hard work.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "search_knowledge_base"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#18",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**NoteShare** is a peer-to-peer marketplace where university students can buy and sell high-quality, verified lecture notes, study guides, and past exams tailored to specific professors. The platform utilizes a decentralized rating system and AI-driven quality checks to ensure accuracy, helping students save study time while rewarding top-performing classmates for their hard work.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#19",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**NoteSwap** is a peer-to-peer marketplace where university students can buy and sell verified, high-quality lecture notes, study guides, and flashcard sets specifically tailored to their exact courses and professors. By gamifying the uploading process with crypto-tokens or cash payouts, it turns top-performing students into micro-entrepreneurs while helping struggling classmates pass their exams.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#20",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**DormDrop** is a peer-to-peer campus delivery app that lets students earn extra cash by having peers pick up and deliver food, groceries, or forgotten textbooks from local spots directly to their dorm room doors. Utilizing existing student foot traffic, it bypasses traditional delivery fees and provides lightning-fast service within campus boundaries.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "delivery_logistics"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#21",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**StudySwap** is a peer-to-peer marketplace where university students can buy, sell, and trade verified lecture notes, study guides, and textbook summaries specific to their professors and courses. By turning high-performing students into micro-entrepreneurs, it creates a crowdsourced academic support network that helps struggling students pass their classes while making extra cash.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "summarization_notes"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#22",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**SubletSync** is a peer-to-peer housing marketplace specifically designed for university students needing short-term leases for study-abroad semesters or summer internships. The platform securely verifies student status, automates lease transfers, and matches roommates to eliminate the stress of paying double rent.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "recommendation_matching"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#23",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**RoommateMatch** is a Tinder-style mobile app that pairs university students with compatible roommates based on study habits, sleep schedules, and cleanliness preferences before the housing lease is signed. The platform reduces campus living conflicts by using a proprietary compatibility algorithm and verified student ID logins.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#24",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCart** is a hyper-local peer-to-peer delivery app that lets university students earn money by delivering food, groceries, and study materials across campus. Because student couriers already walk these routes between classes, orders arrive faster and cheaper than traditional delivery services like DoorDash.",
+      "tags": {
+        "mechanism": [
+          "on_demand_gig_service",
+          "delivery_logistics"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#25",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**\"CampusCrate\"** is a subscription-based micro-fulfillment service that delivers personalized bundles of late-night study snacks, dorm essentials, and wellness products directly to students' doors within 15 minutes. Operated entirely by students using e-scooters, the platform leverages existing campus geography to bypass traditional delivery apps and high fees.",
+      "tags": {
+        "mechanism": [
+          "subscription_box_physical",
+          "delivery_logistics"
+        ],
+        "customer": "students",
+        "revenue": "subscription",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#26",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCribs** is a hyper-local subletting and roommate-matching platform exclusively for university students. It verifies student IDs to ensure safety, automates lease transfers for the summer months, and matches roommates based on study habits and sleep schedules.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#27",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**StudySync** is a peer-to-peer micro-tutoring platform that connects university students who are struggling in specific classes with high-performing peers who just aced them. It operates on a flexible, gig-economy model, allowing student tutors to earn money on their own schedules while providing affordable, same-day academic help tailored to their exact syllabus.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "on_demand_gig_service"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#28",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**RoomieMatch** is a hyper-local roommate finder app that uses university schedules, sleep habits, and cleanliness preferences to pair compatible students living off-campus. It verifies student IDs to ensure safety and integrates with local leasing agents to streamline the apartment-hunting process.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#29",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**SubletSync** is a peer-to-peer housing marketplace specifically designed for university students needing short-term leases for study abroad semesters or summer internships. The platform securely verifies student credentials, automates sublease contracts, and handles matching to eliminate the stress of finding or filling temporary housing.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#30",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCrib** is a peer-to-peer marketplace designed specifically for university students to buy, sell, and rent textbooks, dorm furniture, and tech within their own campus community. By utilizing university email verification and offering on-campus pickup spots, it eliminates the high fees and shipping hassles of platforms like Facebook Marketplace or eBay.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#31",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**SubleaseSwap** is a peer-to-peer marketplace that allows university students to securely buy, sell, and transfer short-term leases for off-campus housing during study abroad semesters or summer breaks. The platform includes verified student profiles, automated lease assignment templates, and escrow payments to eliminate the hassle and financial loss of empty apartments.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#32",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**RoommateRadar** is a mobile app that uses psychometric matching, lifestyle quizzes, and social media verification to help university students find compatible roommates and subletters. By analyzing study habits, cleanliness levels, and sleep schedules, it eliminates dorm drama and housing anxiety before the semester even begins.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "freemium",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#33",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**RoommateSync** is a mobile app that helps university students living off-campus equitably split rent based on exact room sizes, amenities, and usage, while also automating chore rotations and shared grocery bills. By integrating with venmo and utilizing AI to scan lease agreements, it eliminates awkward money conversations and roommate drama before it starts.",
+      "tags": {
+        "mechanism": [
+          "automation_workflow",
+          "payments_fintech_tool"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#34",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**NoteSwap** is a peer-to-peer marketplace where university students can buy and sell verified, high-quality lecture notes, study guides, and summaries specific to their exact professors and courses. By turning top students into micro-entrepreneurs, it helps studious learners monetize their hard work while giving stressed peers a reliable shortcut to passing exams.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#35",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**NoteSwap** is a peer-to-peer marketplace where university students can buy and sell verified, high-quality lecture notes, study guides, and past exams specific to their exact professors and courses. By gamifying the upload process with cash rewards and crypto-credits, it incentivizes top students to share their knowledge while helping struggling peers pass classes efficiently.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "gamification"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#36",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**StudySync** is a peer-to-peer micro-tutoring platform that connects university students who are struggling in specific courses with high-performing peers who have recently aced them. The platform operates on a credits-based barter system or small cash transactions, making academic help affordable for students and flexible for peer tutors looking to earn extra income between classes.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "ai_tutor_coach"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#37",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**DormDrop** is a peer-to-peer campus delivery app that lets students earn extra cash by having fellow classmates pick up and drop off orders from local restaurants and campus dining halls between classes. By leveraging existing student foot traffic and class schedules, it provides hyper-fast, low-cost delivery exclusively tailored to the geography and lifestyle of a university campus.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "delivery_logistics"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#38",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**DormDrop** is a hyper-local peer delivery marketplace where students can pay their peers a small fee to fetch food, coffee, or study supplies from campus spots straight to their dorm room. It provides flexible, on-demand campus jobs for students while saving their peers time during intense study sessions.",
+      "tags": {
+        "mechanism": [
+          "on_demand_gig_service",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#39",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusDrop** is a peer-to-peer delivery network that connects students who need items brought to their dorms with classmates already walking across campus. Users can request anything from library books to late-night snacks, allowing busy students to earn extra cash between classes while getting deliveries faster and cheaper than traditional services.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "delivery_logistics"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#40",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCater** is a micro-catering marketplace that connects busy university students with talented student home-cooks who deliver affordable, homemade meals right to their dorms or libraries. By leveraging peer-to-peer delivery between classes, it solves the problem of expensive campus dining and unhealthy takeout while helping student chefs earn extra income.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "delivery_logistics"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#41",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**StudySwap** is a peer-to-peer marketplace where university students can buy and sell verified class notes, study guides, and past exam summaries for specific professors. By gamifying the uploading process, students earn credits to access materials for their own courses or cash out their earnings. It bridges the gap between high-achieving students looking to monetize their hard work and struggling students needing reliable, course-specific study aids.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "gamification"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#42",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**RoomRoster** is a hyper-local roommate matching app that uses psychometric quizzes, schedule syncing, and lifestyle preferences to help university students find compatible off-campus housing partners. Unlike generic Facebook groups, it verifies student status through university emails and includes in-app lease-signing guides to prevent housing scams.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#43",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCart** is a peer-to-peer delivery app that connects students who need groceries, textbook pickups, or late-night study snacks with classmates already heading across campus. By utilizing students' existing walking or biking commutes, it provides ultra-fast campus deliveries while offering a flexible side hustle for students between classes.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "delivery_logistics"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#44",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**StudySwap** is a peer-to-peer marketplace where university students can buy and sell verified class notes, study guides, and past exams specific to their professors and courses. By turning academic effort into passive income, top students get rewarded while struggling classmates gain access to localized, reliable study materials.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#45",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**NotesTrade** is a peer-to-peer marketplace where university students can buy and sell verified lecture notes, study guides, and exam summaries specific to their exact professors and courses. By turning high-achieving students into micro-entrepreneurs, it helps studious students monetize their efforts while giving struggling classmates access to hyper-local, reliable study materials.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#46",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**RoomieGrade** is a roommate-matching app that pairs university students based on sleep schedules, cleanliness habits, study styles, and budget preferences. By integrating with university emails for verified student status, it eliminates the guesswork and awkwardness of finding compatible off-campus housing mates. The platform also includes a built-in roommate agreement template to preemptively resolve common conflicts over chores and bills.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "freemium",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#47",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**RoommateSync** is a mobile app that helps college roommates effortlessly split rent, utilities, and grocery bills while creating shared chore schedules. By integrating with venmo and using gamified task reminders, it eliminates passive-aggressive roommate conflicts.",
+      "tags": {
+        "mechanism": [
+          "scheduling_planning",
+          "gamification"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#48",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**CampusCart** is a hyper-local peer-to-peer marketplace app designed exclusively for university students to buy, sell, and rent textbooks, dorm furniture, and tech within walking distance. By verifying users through their `.edu` emails, it eliminates shipping costs, reduces campus waste, and ensures safe transactions among trusted classmates.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "gemini:gemini-3.5-flash-lite#49",
+      "model": "gemini:gemini-3.5-flash-lite",
+      "text": "**NotesMate** is a peer-to-peer marketplace where university students can buy and sell verified, high-scoring lecture notes and study guides for specific campus courses. The platform features an AI-powered summary tool that helps buyers quickly review purchased notes while allowing top students to monetize their academic hard work.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "summarization_notes"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#0",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap:** A hyper‑local marketplace app that lets university students instantly trade or rent textbooks, lab equipment, and other coursework essentials within their campus community, using a credit‑based system that rewards frequent lenders with discounts on future rentals. By integrating with the school’s authentication system and offering a “quick‑match” feature for same‑day handoffs, CampusSwap cuts down on waste, saves money, and streamlines peer‑to‑peer resource sharing.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "recommendation_matching"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#1",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace that lets students instantly rent, trade, or sell textbooks, lab kits, and even class‑specific notes using a mobile app that integrates campus IDs for secure, verification‑based transactions. By offering real‑time availability maps of nearby listings and an AI‑driven price‑suggestion tool, it cuts costs, reduces waste, and helps students get the exact resources they need right when they need them.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#2",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap Hub:** A mobile platform where university students can quickly trade, rent, or sell textbooks, dorm décor, and everyday essentials directly with peers on campus, using location‑based matching and secure in‑app payments. The service adds a rating system and optional “green‑points” that reward sustainable swaps, turning everyday student transactions into a community‑building, eco‑friendly marketplace.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "rental_sharing"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#3",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap: a peer‑to‑peer marketplace for textbook, equipment, and skill exchanges.**  \nStudents list items they no longer need (e.g., textbooks, lab gear, or even a weekend coding lesson) and can trade them for other items or “credits” that can be redeemed for services offered by fellow users. The platform uses university‑verified accounts, location‑based matching, and a rating system to ensure safe, quick swaps and to help students save money while building campus‑wide networks.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#4",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap: A peer‑to‑peer marketplace for semester‑long rentals of textbooks, lab equipment, and niche software licenses.** Students list items they’ll only need for a short period, set a rental price, and schedule pickup/drop‑off through the app, earning back money while reducing waste and saving classmates the full purchase cost. The platform also integrates a reputation system and campus‑verified accounts to ensure trust and hassle‑free transactions.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#5",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap: A peer‑to‑peer marketplace where students can quickly trade or rent textbooks, study materials, and dorm‑room essentials.** The platform uses campus‑verified accounts and a rating system to ensure safe, hassle‑free exchanges, and integrates with university calendars so users can schedule meet‑ups during free periods or campus events. A small transaction fee or subscription tier for premium features (like guaranteed same‑day pickup) generates revenue while keeping the service affordable for students.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "scheduling_planning"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#6",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a hyper‑local, peer‑to‑peer marketplace app where university students can quickly list, discover, and trade textbooks, lab equipment, dorm furnishings, and even skill‑based services (like tutoring or résumé reviews). Built around campus verification and a points‑based reputation system, it streamlines sustainable, cost‑effective exchanges while fostering community connections.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#7",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app where university students can instantly trade, rent, or sell textbooks, lab equipment, dorm décor, and other campus essentials. By integrating with school ID authentication and a reputation system, the platform ensures safe, campus‑only transactions while cutting costs and reducing waste for students.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "rental_sharing"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#8",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap: A peer‑to‑peer marketplace for textbook, equipment, and dorm‑item rentals.** Students list items they’re willing to lend or rent out for short periods (e.g., a semester’s worth of a textbook or a camera for a project), set their own prices, and schedule hand‑offs through the app’s integrated campus‑map and secure payment system. It cuts costs, reduces waste, and creates a trusted community of “study‑buddy” traders on every campus.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#9",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap: A peer‑to‑peer marketplace for textbooks, study guides, and course‑specific equipment.**  \nStudents can list items they no longer need, set their own prices or offer free swaps, and schedule on‑campus meet‑ups or secure contactless delivery via the app’s integrated logistics partner. By aggregating demand within each university’s community, Campus‑Swap reduces textbook costs by up to 70 % while fostering sustainable reuse and faster access to needed resources.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#10",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap:** A peer‑to‑peer marketplace app where university students can list, trade, or rent textbooks, lab equipment, and other course‑specific resources directly with classmates, using campus‑verified profiles and instant messaging. The platform integrates with the university’s course catalog to suggest relevant items and offers a built‑in escrow system to ensure safe transactions, helping students save money and reduce waste.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#11",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap: A peer‑to‑peer marketplace for textbook, equipment, and living‑space swaps.** Students list items they no longer need (e.g., used textbooks, lab gear, or a spare dorm room) and can instantly trade or rent them to classmates nearby, with built‑in verification, escrow payment, and a reputation system to keep transactions safe and hassle‑free. It reduces costs, promotes sustainability, and turns underutilized campus resources into a convenient, cash‑saving network.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#12",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app where university students can quickly trade or rent textbooks, lab equipment, and other course‑specific resources for a short term. The platform uses school‑verified accounts, instant messaging, and a built‑in rating system to ensure safe, reliable exchanges, while offering optional “swap credits” that let users earn points for future rentals or discounts. This reduces costs, minimizes waste, and keeps students’ academic gear circulating within the campus community.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#13",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app where university students can quickly trade or rent textbooks, lab equipment, and other course‑specific supplies for a semester. By integrating with campus ID authentication and offering a built‑in escrow system, the platform ensures safe, hassle‑free exchanges while helping students cut costs and reduce waste.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "rental_sharing"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#14",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap Hub** – A peer‑to‑peer marketplace app that lets university students quickly trade or rent textbooks, study guides, lab equipment, and even short‑term housing swaps for semesters. The platform integrates with campus ID verification and class enrollment data to ensure safe, relevant matches and offers escrow‑based payments plus a rating system to build trust.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#15",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap:** A peer‑to‑peer marketplace app where students can instantly trade or rent textbooks, study notes, and semester‑specific supplies (like lab kits or software licenses) within their campus community, using a secure, verified‑student profile system. The platform integrates with the university’s calendar to suggest optimal swap times (e.g., before exams) and offers a low‑fee escrow service to ensure safe transactions.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#16",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app where university students can instantly trade or rent textbooks, study guides, lab equipment, and even short‑term housing swaps for the semester. By integrating school ID verification and a reputation system, the platform ensures safe, affordable exchanges while reducing waste and helping students save money on essential resources.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#17",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap:** A mobile marketplace that lets university students trade or rent textbooks, lab equipment, and niche study resources directly with peers on campus, using a reputation‑based rating system and secure in‑app payments. By leveraging class enrollment data (with user consent), the app automatically matches supply and demand each semester, cutting costs and waste while earning revenue from a small transaction fee and premium “featured listing” options.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#18",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap: A hyper‑local “swap‑shop” app where students can instantly trade textbooks, study guides, gadgets, and even dorm‑decor items with peers on the same campus.** Users list what they have and what they need, set preferred exchange methods (in‑person meet‑ups, lockers, or scheduled drop‑offs), and the platform handles verification, rating, and a built‑in escrow for higher‑value items, turning unused resources into quick cash or useful swaps while fostering a sustainable campus community.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#19",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app where university students can instantly trade or rent textbooks, lab equipment, and even short‑term housing sublets within their campus community, using verified school email sign‑ups and campus‑based escrow to ensure trust and safety. The platform adds a “study‑group” feature that lets users form micro‑communities around courses, offering group‑buy discounts and shared resources, while generating revenue through a modest transaction fee and premium listings.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#20",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap: A hyper‑local marketplace where university students can instantly trade textbooks, study kits, dorm décor, and even short‑term services (like tutoring or moving help) with peers on the same campus.** The platform uses school‑verified accounts and a reputation system to ensure safe, fast exchanges, and it integrates with the university’s calendar so users can schedule meet‑ups during gaps between classes. By reducing waste and saving money, CampusSwap turns underutilized resources into a community‑driven cash flow for students.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#21",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap:** A mobile marketplace where university students can instantly trade or rent textbooks, lab equipment, and dorm‑room essentials directly with peers on campus, using a verified student‑ID login and integrated QR‑code hand‑off for secure exchanges. The platform adds AI‑powered price suggestions and a “green‑credit” reward system that gamifies sustainable sharing and earns points redeemable for campus services or local discounts.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "gamification"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#22",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap:** A mobile marketplace where university students can instantly trade or rent textbooks, lab equipment, and other course‑specific supplies with peers on campus, using a built‑in verification system that links each listing to the university’s enrollment records. By handling logistics (pick‑up points, QR‑code check‑ins) and offering a rating system, it reduces costs for students while ensuring safe, reliable exchanges.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#23",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app where university students can quickly rent or exchange textbooks, lab equipment, and other course‑specific gear for short periods. The platform includes built‑in verification (student email authentication), calendar sync for loan durations, and a rating system to ensure trustworthy transactions, helping students save money and reduce waste on campus.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#24",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app where university students can trade or sell textbooks, study notes, and small dorm‑room items (like furniture, kitchenware, or tech accessories) directly with classmates. By integrating campus verification, real‑time location filters, and a rating system, the platform ensures safe, convenient exchanges while helping students save money and reduce waste.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#25",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap:** A peer‑to‑peer marketplace app where university students can instantly trade or rent textbooks, study notes, and niche equipment (e.g., lab kits, musical instruments) within their campus community, using a built‑in verification system and campus‑specific escrow to ensure safety. By leveraging real‑time location filters and a rating system, the platform reduces waste, saves money, and fosters collaborative learning among students.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#26",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap:** A peer‑to‑peer marketplace app where university students can instantly trade or rent textbooks, lab equipment, and other course‑specific resources at campus‑wide, verified rates. Integrated with the university’s authentication system, the platform uses smart matching and QR‑code check‑ins to ensure secure, on‑the‑spot exchanges, cutting costs and reducing waste for both students and the institution.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "recommendation_matching"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#27",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap: A peer‑to‑peer marketplace for textbooks, study guides, and course‑specific equipment.**  \nStudents can list items they’re done with, set flexible pickup/drop‑off spots on campus, and earn “CampusCoins” that can be redeemed for discounts on future listings or campus services, turning the end‑of‑semester scramble into a sustainable, cash‑saving ecosystem.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#28",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap Marketplace** – A mobile app that lets university students easily trade or rent textbooks, lab equipment, and other course‑specific supplies directly with peers on campus. By using verified university email sign‑ups and a rating system, the platform ensures safe, low‑cost exchanges while reducing waste and helping students save money on essential materials.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#29",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap: A peer‑to‑peer marketplace for textbook and equipment rentals.**  \nStudents can list textbooks, lab gear, or specialty software licenses they own for short‑term rent at a fraction of the purchase price, while a built‑in verification system ensures items are in good condition and returns are tracked. The platform earns revenue through a modest transaction fee and offers subscription perks like priority access to high‑demand items and automatic reminders for upcoming due dates.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#30",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap Marketplace** – a hyper‑local app that lets university students instantly trade or rent textbooks, lab equipment, and dorm‑room essentials with peers on the same campus. By integrating school‑ID verification, real‑time inventory feeds from nearby dorms and libraries, and a built‑in escrow system, the platform ensures safe, zero‑fee exchanges while reducing waste and saving students up to 70 % on typical semester costs.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "rental_sharing"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#31",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a mobile marketplace where university students can instantly trade or rent textbooks, lab equipment, and study resources with peers in their own campus, using verified school email accounts and a built‑in rating system to ensure trust. The platform integrates with university calendars to suggest timely exchanges before each semester’s start, and offers optional subscription perks like free shipping for high‑value items and AI‑powered study‑group matching.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "recommendation_matching"
+        ],
+        "customer": "students",
+        "revenue": "subscription",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#32",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap: A Peer‑to‑Peer Rental Marketplace** – An app that lets university students list textbooks, lab equipment, hobby tools, or even short‑term housing for rent to classmates, with integrated verification, scheduling, and secure payment. By turning underused assets into income streams, it reduces costs for students and promotes a more sustainable, collaborative campus economy.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#33",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap:** A peer‑to‑peer marketplace app that lets university students instantly trade or rent textbooks, lab equipment, and study resources within their campus community, using a built‑in verification system and campus‑specific payment options. By integrating with the university’s single sign‑on, the platform ensures only verified students can list or request items, reducing costs and waste while fostering collaborative learning.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#34",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a mobile marketplace that lets university students quickly exchange or rent textbooks, lab equipment, and dorm‑room essentials within their campus community. Users list items with QR‑coded pickup locations, set flexible rental periods, and earn campus credits that can be redeemed for coffee, printing, or event tickets, fostering a sustainable, cost‑saving loop for students.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#35",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap:** A mobile marketplace that lets students trade or rent under‑utilized items—textbooks, lab equipment, sports gear, or even short‑term housing—directly with peers on campus, using a reputation‑based rating system and integrated university‑verified IDs for safety. By turning idle assets into quick cash or convenient access, Campus‑Swap helps students save money, reduce waste, and build a trusted community of fellow scholars.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#36",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app that lets university students trade or rent textbooks, lab equipment, and other course‑specific items for a semester or a single class. By using school‑verified accounts and geo‑location, the platform ensures safe, low‑cost exchanges and reduces waste, while earning revenue through a small transaction fee and premium listings for faster matches.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "rental_sharing"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#37",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap: a peer‑to‑peer marketplace for textbook, equipment, and housing swaps that runs on a university‑verified network.** Students list items they’re selling, renting, or looking to exchange, and the platform uses AI‑powered matching and a built‑in escrow system to guarantee safe, frictionless transactions within the campus community. By leveraging school email verification and integrating with campus calendars for pickup/drop‑off slots, it cuts costs, reduces waste, and creates a trusted local economy.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "recommendation_matching"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#38",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app that lets university students trade or rent textbooks, study guides, and course‑specific equipment (like lab kits or musical instruments) for short periods. Using a university‑verified profile and a built‑in rating system, users can quickly arrange secure, campus‑local exchanges, reducing costs and waste while keeping resources circulating within the student community.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#39",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap:** A peer‑to‑peer marketplace app where university students can quickly rent, sell, or exchange textbooks, study kits, and small dorm‑room items on a per‑semester basis, with built‑in verification and campus‑specific pickup points to ensure safety and convenience. The platform uses a reputation system and optional instant‑pay escrow to foster trust, while offering analytics that suggest the best time to list items based on course schedules and demand trends.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#40",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app where students can quickly rent, sell, or exchange textbooks, study kits, and small tech gear for short‑term use during a semester. By leveraging university‑verified profiles and location‑based matching, the platform ensures safe, affordable access to resources while cutting down on waste and helping students save money.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "rental_sharing"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#41",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app where university students can instantly trade or rent textbooks, lab equipment, and dorm essentials within their campus community. By leveraging school‑verified profiles and a built‑in credit system, the platform cuts costs, reduces waste, and speeds up the exchange process with real‑time notifications and secure in‑person handoff locations.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "rental_sharing"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#42",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app where university students can instantly trade or rent textbooks, notes, lab equipment, and even dorm furniture within their campus community. By integrating school‑verified accounts and a reputation system, the platform ensures safe, reliable exchanges while cutting costs and reducing waste for students.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#43",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a mobile marketplace where students can instantly trade or rent textbooks, study guides, and course‑specific equipment (like lab kits or art supplies) with peers on the same campus. By using real‑time location tagging and a built‑in verification system, the app ensures safe, quick exchanges while cutting down on the high costs of buying new materials each semester.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#44",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap: a hyper‑local, peer‑to‑peer marketplace for university students to trade, rent, or sell textbooks, study guides, lab equipment, and dorm‑room essentials.** Using AI‑driven matching and campus‑verified profiles, the app instantly connects nearby students with the exact resources they need, offering secure in‑person handoffs or campus‑locker pickups. A built‑in credit‑system lets users earn “CampusCoins” for every transaction, which can be redeemed for discounts on campus services, tutoring, or event tickets.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "recommendation_matching"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#45",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap Marketplace**: A mobile platform where university students can list, discover, and trade items they no longer need—textbooks, dorm décor, electronics, or even skill‑based services—directly with peers on campus. The app incorporates a reputation system, secure in‑app payments, and a “quick meet‑up” feature tied to campus hotspots, making sustainable swapping fast, trustworthy, and campus‑centric.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#46",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a mobile marketplace where university students can instantly trade or rent textbooks, study guides, and course‑specific supplies with peers on the same campus. By integrating school IDs for verification and a built‑in scheduling tool, the app ensures safe, same‑day exchanges and reduces the cost of semester materials.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#47",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**Campus‑Swap Marketplace**: A mobile app that lets university students easily exchange textbooks, lab equipment, and niche supplies (e.g., art materials, coding kits) within their campus community. Users can list items they no longer need, set fair trade or price‑adjusted offers, and arrange quick in‑person handoffs through verified student profiles, reducing costs and waste while fostering peer collaboration.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#48",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a peer‑to‑peer marketplace app that lets university students instantly trade or rent textbooks, course notes, lab equipment, and even short‑term housing swaps within their campus community. By integrating school IDs for verification and offering a built‑in rating system, the platform ensures safe, low‑cost exchanges that help students save money and reduce waste. A small transaction fee or optional premium features (e.g., priority listings or escrow protection) can generate revenue while keeping the core service free.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:openai/gpt-oss-120b#49",
+      "model": "groq:openai/gpt-oss-120b",
+      "text": "**CampusSwap** – a hyper‑local, peer‑to‑peer marketplace app where university students can instantly trade textbooks, lab equipment, dorm décor, and even short‑term services (like tutoring or moving help) using campus‑verified profiles and a built‑in credit system that rewards repeat swaps with free listings and priority visibility. By streamlining exchange logistics and eliminating middlemen, CampusSwap reduces waste, saves money, and builds a collaborative campus community.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#0",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Launch a peer-to-peer platform that connects students with verified local tutors for micro-learning sessions, using AI to instantly match specific course gaps with available teaching hours. This model solves the immediate struggle of retaining difficult material before exams while offering students a flexible, hourly income stream without the overhead of traditional tutoring agencies.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#1",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A mobile app that connects university students with local small businesses for short-term, low-commitment micro-internships in exchange for service discounts or discounted meal packages. This platform allows students to build real-world skills and expand their networks without needing formal employment, while providing local businesses with flexible, on-demand labor.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "hiring_talent_matching"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#2",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for on-demand, 15-minute clarification sessions offered between classes. The app utilizes geofencing to instantly match students who are confused about a specific textbook section or assignment with a top-performing peer nearby, enabling rapid, low-cost academic support without the overhead of traditional tutoring agencies.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#3",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Launch a peer-to-peer platform that connects students with verified local tutors for specific university courses, offering discounted rates compared to professional tutoring services. The platform can feature dynamic scheduling that aligns with class timetables and integrated payment processing to ensure seamless transactions between students. This model leverages the existing academic community to create an affordable, accessible, and flexible learning support ecosystem.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "scheduling_planning"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#4",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for late-night, on-demand academic support via video chat. This service focuses on immediate help with specific homework problems or exam prep, filling the gap often left by formal campus tutoring centers that have rigid schedules and long waitlists.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "on_demand_gig_service"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#5",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Launch a peer-to-peer platform that connects motivated students with local small businesses or other students seeking affordable mentorship in niche skills like software development, marketing, or finance. This allows mentors to monetize their expertise in flexible, short 15-minute sessions while learners gain practical, real-world guidance from role models at a fraction of professional coaching costs. The platform could use a skills-based matching algorithm and integrated scheduling to streamline the connection process for both parties.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "mentorship_expert_network"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#6",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for micro-lessons based on their current lecture materials. This service utilizes AI to generate quick, 15-minute video explanations of complex concepts, allowing students to review difficult topics at their own pace without the high cost of traditional private tutoring.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "ai_tutor_coach"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#7",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A mobile app that connects university students with local small businesses for short-term micro-internships or project-based gigs in exchange for academic stipends. This platform bridges the gap between theoretical learning and real-world experience while providing businesses with fresh perspectives and affordable access to specialized student talent.",
+      "tags": {
+        "mechanism": [
+          "hiring_talent_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#8",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A peer-to-peer platform that connects students with verified local tutors for last-minute exam prep and niche subject help, using a gig-economy model where tutors set their own rates and availability.\n\nThe service leverages social proof by allowing students to leave video reviews, building trust and community while providing flexible, affordable learning support that adapts to busy academic schedules.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#9",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Launch a peer-to-peer platform that connects students with verified local tutors for last-minute exam prep and subject-specific homework help. By using dynamic pricing based on urgency and course difficulty, you create a flexible income stream for seniors while ensuring fresher undergrads get affordable, on-demand academic support.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "scheduling_planning"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#10",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for last-minute exam prep and study groups, using a gamified system to reward consistent teaching and high user ratings. This solution addresses the common gap between coursework difficulty and available academic support while fostering a collaborative learning community on campus.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "gamification"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#11",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a \"Skill-Share\" marketplace where university students can trade academic tutoring services for hands-on help with other students' personal projects, such as bug fixing an app or designing a logo. This model leverages the diverse expertise on campus, solving the problem of expensive external freelancers while fostering a collaborative community where learning and doing coexist.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "ai_tutor_coach"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#12",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for last-minute cram sessions or specialized skill swaps, using a points-based reward system instead of cash payments to lower barriers to entry. This approach leverages existing university networks to build trust quickly while offering flexible, affordable learning opportunities tailored to specific course syllabi.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "ai_tutor_coach"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#13",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for skill-based micro-sessions, such as 15-minute coding help or exam prep, using a digital credit system earned by helping others. This model leverages the university community's vast pool of talent and demand, reducing barriers to entry while fostering a collaborative campus culture.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#14",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "**StudySync** is a peer-to-peer platform that connects university students with verified, high-performing seniors for subject-specific study sessions and note-sharing, curated by department and specific courses.\n\nThis service solves the common struggle of finding reliable academic partners while ensuring collaborative learning is structured and effective. The app operates on a points system where students earn credits by helping others, which can be redeemed for premium AI study tools or exclusive lounge access on campus.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "search_knowledge_base"
+        ],
+        "customer": "students",
+        "revenue": "subscription",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#15",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A peer-to-peer platform that allows students to rent out underutilized study spaces, such as spare bedrooms or quiet balconies, to classmates who need a focused environment. This marketplace connects users directly, sharing costs and fostering community while helping individuals avoid the distractions of crowded libraries or noisy cafés.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#16",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for micro-lessons, allowing them to share study notes and offer short, affordable sessions in exchange for earning back their textbook costs. This model leverages the existing academic knowledge within the campus community to provide immediate, relevant support while reducing the high financial barrier to external tutoring services.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "summarization_notes"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#17",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Develop a peer-to-peer platform that connects students with verified local tutors for last-minute exam help or assignment explainers, utilizing a \"skill-swap\" model where users can earn credits by teaching their own strong subjects. This approach democratizes academic support by making it significantly more affordable than traditional tutoring services while fostering a collaborative learning community within the campus.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#18",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for last-minute exam prep, leveraging an on-demand model similar to ride-sharing but for knowledge. By using a gamified reputation system and transparent rating metrics, the app builds trust among students while offering tutors a flexible way to earn income on their own schedule.",
+      "tags": {
+        "mechanism": [
+          "on_demand_gig_service",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#19",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for impromptu, AI-scheduled study sessions in campus common areas. By leveraging a dynamic pricing model based on urgency and subject difficulty, the app transforms unused wait times into productive learning opportunities, fostering a collaborative academic community while offering flexible earning potential for high-performing students.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "scheduling_planning"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#20",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A peer-to-peer platform that connects students with verified local tutors for last-minute exam prep, leveraging AI to match subjects and scheduling availability within a specific campus. This service solves the urgency and convenience issues students face during finals, offering affordable, hyper-local help that is significantly faster to arrange than traditional tutoring agencies.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#21",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A peer-to-peer platform that connects students with verified local tutors for last-minute exam prep or confusing lecture topics, using AI to instantly match subjects and schedules. This solves the high cost of traditional tutoring while leveraging the existing knowledge base within the student body for mutual benefit.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "peer_to_peer_exchange"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#22",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Launch a peer-to-peer tutoring marketplace that pairs first-year students with experienced upperclassmen, utilizing a group chat feature to facilitate collaborative study sessions and shared resources. This platform solves the common struggle of navigating university coursework by connecting students with similar majors who are already succeeding in those specific courses.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "ai_tutor_coach"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#23",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for last-minute exam prep or skill-based workshops, using AI to match study schedules and budget constraints. This service solves the problem of inaccessible or disjointed academic support by making specialized help affordable and instantly available within campus communities.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#24",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A platform that connects university students for micro-consulting, allowing those with specific skills to offer short, affordable sessions—like resume reviews, coding help, or language practice—to peers who need quick, targeted assistance. This model leverages the abundant intelligence of student bodies to create a supportive ecosystem where knowledge is shared, students earn flexible income, and everyone saves time and money compared to expensive external services.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#25",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform where students can rent out unused study spots, lab equipment, or creative spaces on campus for short hourly sessions, monetizing idle resources while helping classmates find affordable, flexible work environments. This model leverages the existing trust and proximity of the university community to eliminate overhead costs and reduce study anxiety through shared, spontaneous social learning.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#26",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A peer-to-peer platform that connects students with verified local tutors for last-minute exam prep, utilizing AI to match them based on specific course syllabi and learning styles. The service operates on a flexible, hourly basis with cashback rewards for both tutor and learner, incentivizing consistent study habits.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#27",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Launch a peer-to-peer platform that connects students with verified local tutors for micro-learning sessions, focusing on specific, high-demand subjects like coding or statistics. By utilizing a gamified reward system and flexible scheduling, the app makes academic support more accessible and affordable than traditional tutoring services. This model also provides paid gig opportunities for upperclassmen and graduates looking to monetize their expertise during their own studies.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "gamification"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#28",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for real-time, in-person help during study sessions on campus. This model focuses on flexible, drop-in scheduling rather than long-term commitments, making academic support more accessible and affordable.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "scheduling_planning"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#29",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for specific, high-yield exam preparation sessions rather than long-term courses. The app uses AI to generate personalized study plans based on upcoming exam dates and syllabus difficulty, while offering a micro-lending system that allows tutors to fund their own materials in exchange for higher commission rates.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "ai_tutor_coach"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#30",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A peer-to-peer platform that connects students with verified local tutors for last-minute exam prep using a mobile \"Uber-like\" interface for instant booking. The app incentivizes high-performing students to offer short, targeted study sessions on a flexible schedule, creating a scalable marketplace for affordable academic support.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "ai_tutor_coach"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#31",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer skill-swapping platform where university students can trade services like resume review, coding help, or language tutoring instead of paying cash. This model leverages the unique expertise across different majors, fostering a collaborative community while removing financial barriers for both parties.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "community_social_network"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#32",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for last-minute exam prep, offering flexible micro-sessions priced affordably. The app could integrate study room booking and group formation features to foster collaborative learning communities across campus.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "booking_reservation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#33",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for last-minute exam prep or specific skill gaps, using dynamic pricing to keep costs low for undergrads. This model leverages the existing social networks within universities to build trust quickly while offering a faster, more affordable alternative to traditional tutoring services.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#34",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Launch a peer-to-peer platform that connects students with verified local tutors for last-minute exam prep and specialized subject support, ensuring quality through student reviews and academic validation. The business model relies on a small commission per hour, making expert academic help affordable and easily accessible directly from mobile devices.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#35",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Launch a platform that connects students with local businesses for affordable, skill-based micro-internships, allowing students to gain verified on-the-job experience while companies access flexible, entry-level talent without the overhead of full-time hiring.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "hiring_talent_matching"
+        ],
+        "customer": "students",
+        "revenue": "b2b_license_saas",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#36",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Develop a peer-to-peer platform that connects students with verified local tutors for micro-lessons, offering them the ability to pay for 15-minute video consultations using a flexible in-app credit system. This addresses the high demand for immediate, affordable academic assistance while providing tutors with a reliable source of side income.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "ai_tutor_coach"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#37",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified, accredited local tutors for on-demand help, featuring instant matching and integrated payment processing to streamline the learning experience. This solution addresses the high demand for academic support while providing students with flexible, affordable, and verifiable tutoring opportunities outside of traditional school constraints.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#38",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A mobile app that connects university students with local alumni for free, short-term mentorship and industry-specific Q&A sessions. This platform would use an algorithm to match students with professionals in their field of interest, fostering targeted career guidance that is typically hard to access for freshmen and sophomores.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "mentorship_expert_network"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#39",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Develop a peer-to-peer platform that connects students with verified, vetted tutors from the same university, using AI to match them based on specific course syllabi and study habits. The app could integrate automated scheduling and group study room features to reduce the friction of organizing sessions, fostering a more collaborative and accessible academic community on campus.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "scheduling_planning"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#40",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local professionals for affordable, 30-minute virtual mentorship sessions in fields like coding, finance, or creative arts. This service bridges the gap between classroom theory and real-world industry experience while providing students with personalized career guidance that traditional campus resources often lack.",
+      "tags": {
+        "mechanism": [
+          "mentorship_expert_network",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#41",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A peer-to-peer platform allowing students to rent out unused textbooks, lab equipment, or study spaces to classmates for short durations, reducing costs and waste. The app uses flexible pricing and logistics coordination to make sharing academic resources as easy as ordering food.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#42",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students who need last-minute accommodation with those who have spare rooms or are traveling during exams. This service solves the common housing gap during crowded university periods by offering verified, affordable short-term stays directly between trusted community members.",
+      "tags": {
+        "mechanism": [
+          "rental_sharing",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#43",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for skill swaps, allowing them to trade specialized academic help for other desired skills like coding or language lessons. A hybrid digital wallet system tracks the value of each hour exchanged, enabling users to build a portfolio of acquired competencies while earning credit for their own expertise. This creates a sustainable micro-economy within the university campus that reduces financial barriers to learning and fosters a stronger community network.",
+      "tags": {
+        "mechanism": [
+          "peer_to_peer_exchange",
+          "mentorship_expert_network"
+        ],
+        "customer": "students",
+        "revenue": "unspecified",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#44",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for last-minute exam preparation, using an AI chatbot to instantly match subjects and availability. The app monetizes through a small per-session fee split between the tutor and platform, while offering students discounted rates compared to traditional tutoring services. This solves the common problem of finding reliable, affordable academic help late at night or on weekends.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#45",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "A peer-to-peer platform that connects students with verified local tutors for last-minute exam prep, using AI to match them based on specific course syllabi and learning styles. The service operates on a flexible micro-transaction model, allowing students to pay per session rather than committing to long-term packages.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#46",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for specific micro-skills, such as Excel shortcuts or Python basics, through short, affordable video sessions. This solves the issue of time-intensive traditional tutoring by offering on-demand, bite-sized learning that fits into a busy student schedule.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "ai_tutor_coach"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "web_platform"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#47",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Develop a peer-to-peer platform that connects students with verified local tutors for last-minute exam cramming or specific skill-gap remediation. The app uses AI to match based on mutual schedule availability and topic expertise, enabling flexible, micro-booking sessions directly through a campus-specific marketplace.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#48",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for last-minute exam prep, leveraging AI to instantly match learners with experts based on specific course materials and urgency. The service operates on a flexible \"micro-tutoring\" model, allowing students to book short, affordable 15-minute video sessions directly from their mobile phones.",
+      "tags": {
+        "mechanism": [
+          "recommendation_matching",
+          "marketplace_two_sided"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    },
+    {
+      "id": "groq:qwen/qwen3.8-27b#49",
+      "model": "groq:qwen/qwen3.8-27b",
+      "text": "Create a peer-to-peer platform that connects students with verified local tutors for affordable, on-demand academic support in specific subjects. The app would use a transparent rating system and flexible scheduling to lower the barrier for consistent tutoring, helping students boost their grades without the high cost of traditional agencies.",
+      "tags": {
+        "mechanism": [
+          "marketplace_two_sided",
+          "verification_trust_reputation"
+        ],
+        "customer": "students",
+        "revenue": "transaction_fee_commission",
+        "form": "mobile_app"
+      }
+    }
+  ],
+  "untagged": []
+}

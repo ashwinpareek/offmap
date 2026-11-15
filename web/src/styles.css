@@ -600,3 +600,42 @@ html, body { overflow-x: clip; }
 }
 
 .ideas-dropped li { animation: fade-up 500ms ease calc(var(--i) * 50ms) both; }
+
+/* ── fourth motion pass ──────────────────────────── */
+
+.progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 45; background: var(--chart); transform: scaleX(0); transform-origin: 0 50%; }
+
+.gauge-num { overflow: hidden; padding: 0.06em 0.14em 0.1em 0.04em; margin: -0.06em -0.14em -0.1em -0.08em; }
+.gauge-num span { display: block; }
+
+/* bars and prompt boxes are now driven by scroll; drop the one-shot versions */
+[data-reveal] .bar-fill, [data-reveal].in .bar-fill { transition: none; }
+.struck::after { display: none; }
+.strike { position: absolute; left: -3px; top: 50%; width: calc(100% + 6px); height: 10px; margin-top: -4px; overflow: visible; pointer-events: none; }
+.strike line { stroke: var(--accent); stroke-width: 2; vector-effect: non-scaling-stroke; stroke-dasharray: 1; stroke-dashoffset: 0; }
+
+.copy.is-done { animation: done-pop 520ms cubic-bezier(0.3, 1.8, 0.5, 1); background: var(--accent); }
+@keyframes done-pop { 0% { transform: scale(0.86) rotate(-4deg); } 60% { transform: scale(1.1) rotate(2deg); } }
+
+.text-button { text-decoration: none; background: linear-gradient(var(--accent), var(--accent)) no-repeat 0 100% / 100% 1.5px; padding-bottom: 3px; transition: background-size 350ms cubic-bezier(0.6, 0, 0.2, 1), color 200ms ease; }
+.text-button:hover { background-position: 100% 100%; background-size: 0% 1.5px; }
+
+/* pinned depth slider */
+.slider { position: relative; margin-top: calc(-1 * clamp(64px, 12vh, 128px)); }
+.slider-stage { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; overflow: hidden; }
+.slider-stage .wrap { width: 100%; }
+.slider-lead { font-size: clamp(1.125rem, 2vw, 1.5rem); color: var(--muted); }
+.slider-names { position: relative; height: clamp(11rem, 30vh, 19rem); margin-top: 10px; }
+.slider-stop { position: absolute; inset: 0 0 auto 0; }
+.slider-name { font-family: var(--serif); font-style: italic; font-size: clamp(3rem, 11vw, 11rem); line-height: 0.95; color: var(--chart-light); white-space: nowrap; }
+.slider-line { margin-top: 18px; font-size: clamp(1rem, 1.5vw, 1.25rem); max-width: 36em; }
+.slider-track { position: relative; height: 2px; background: var(--line); margin: clamp(28px, 6vh, 64px) 14px 0; }
+.slider-fill { position: absolute; inset: 0; background: var(--chart-light); transform: scaleX(0); transform-origin: 0 50%; }
+.slider-knob { position: absolute; left: 0; top: 50%; width: 26px; height: 26px; margin: -13px 0 0 -13px; background: var(--chart-light); box-shadow: 0 0 0 6px rgb(255 156 205 / 0.22); }
+.slider-ticks { display: flex; justify-content: space-between; margin: 18px 6px 0; font-size: 0.9375rem; font-weight: 650; }
+.slider-ticks span { opacity: 0.45; min-width: 16px; text-align: center; }
+
+@media (max-width: 700px) {
+  .slider-name { white-space: normal; font-size: clamp(2.6rem, 15vw, 4.5rem); }
+  .slider-names { height: 15.5rem; }
+}

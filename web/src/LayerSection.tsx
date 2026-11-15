@@ -29,7 +29,7 @@ function Gauge({ depth, deepest }: { depth: number; deepest: number }) {
     <aside className="gauge">
       <div className="gauge-stick">
         <p className="gauge-num" aria-hidden="true">
-          {depth}
+          <span>{depth}</span>
         </p>
         <p className="gauge-name">{depthName(depth)}</p>
         <nav className="gauge-ticks" aria-label="Depth">
@@ -195,6 +195,9 @@ export function LayerSection({ topic, layer, deepest }: { topic: Topic; layer: L
                       {g.tags.map((t, i) => (
                         <span className="struck" key={t} style={{ ["--i" as string]: i }}>
                           {label(t)}
+                          <svg className="strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true">
+                            <line x1="0" y1="5" x2="100" y2="5" pathLength={1} />
+                          </svg>
                         </span>
                       ))}
                     </span>
@@ -232,12 +235,12 @@ export function LayerSection({ topic, layer, deepest }: { topic: Topic; layer: L
             </div>
           </div>
 
-          <div className="take" data-reveal>
+          <div className="take">
             <div>
               <h3>Take this depth with you</h3>
               <Typed className="take-prompt" text={ruleOutPrompt} />
             </div>
-            <button className="copy" data-magnetic onClick={copy}>
+            <button className={`copy${copied ? " is-done" : ""}`} data-magnetic onClick={copy}>
               {copied ? "Copied" : "Copy this prompt"}
             </button>
           </div>

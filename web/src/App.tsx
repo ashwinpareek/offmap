@@ -98,6 +98,7 @@ export default function App() {
           </div>
         </div>
       )}
+      <div className="progress" aria-hidden="true" />
       <header className="top tone-0" id="top">
         <div className="wrap top-row">
           <a className="brand" href="#top" aria-label="Offmap, back to top">

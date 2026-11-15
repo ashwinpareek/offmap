@@ -83,11 +83,23 @@ export function startScrollFx() {
     gsap.utils.toArray<SVGElement>(".wave").forEach((w) => {
       gsap.fromTo(w, { scaleY: 1 }, { scaleY: 0, transformOrigin: "50% 0%", ease: "none", scrollTrigger: { trigger: w, start: "top 95%", end: "top 15%", scrub: 0.6 } });
     });
-    const roomy = window.matchMedia("(min-width: 901px)").matches;
-    gsap.utils.toArray<HTMLElement>(".gauge-num").forEach((n) => {
-      if (!roomy) return;
-      gsap.fromTo(n, { scale: 1.7, xPercent: 6, autoAlpha: 0 }, { scale: 1, xPercent: 0, autoAlpha: 1, transformOrigin: "0% 0%", ease: "power2.out", scrollTrigger: { trigger: n.closest(".layer"), start: "top 80%", end: "top 12%", scrub: 0.7 } });
+    // depth numerals rise out of a mask
+    gsap.utils.toArray<HTMLElement>(".gauge-num span").forEach((n) => {
+      gsap.from(n, { yPercent: 108, duration: 1.2, ease: "power3.out", scrollTrigger: { trigger: n.closest(".layer"), start: "top 68%" } });
     });
+    // bars grow with the scroll, one after another
+    gsap.utils.toArray<HTMLElement>(".bars").forEach((bars) => {
+      gsap.fromTo(bars.querySelectorAll(".bar-fill"), { scaleX: 0 }, { scaleX: 1, transformOrigin: "0 50%", ease: "none", stagger: 0.12, scrollTrigger: { trigger: bars, start: "top 88%", end: "top 38%", scrub: 1 } });
+    });
+    // ruled-out approaches are crossed out by a line drawn as you scroll
+    gsap.utils.toArray<HTMLElement>(".ruled").forEach((r) => {
+      gsap.fromTo(r.querySelectorAll(".strike line"), { strokeDashoffset: 1 }, { strokeDashoffset: 0, ease: "none", stagger: 0.25, scrollTrigger: { trigger: r, start: "top 82%", end: "top 40%", scrub: 0.8 } });
+    });
+    // the prompt box lands like a sticker
+    gsap.utils.toArray<HTMLElement>(".take").forEach((t) => {
+      gsap.from(t, { scale: 0.8, rotation: -5, autoAlpha: 0, duration: 0.8, ease: "back.out(2)", scrollTrigger: { trigger: t, start: "top 88%" } });
+    });
+    gsap.to(".progress", { scaleX: 1, ease: "none", scrollTrigger: { start: 0, end: "max", scrub: 0.3 } });
     gsap.utils.toArray<HTMLElement>(".next").forEach((p) => {
       gsap.fromTo(p, { clipPath: "inset(0 100% 0 0)" }, { clipPath: "inset(0 0% 0 0)", ease: "none", scrollTrigger: { trigger: p, start: "top 92%", end: "top 55%", scrub: 0.5 } });
     });

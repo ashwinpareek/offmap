@@ -1,8 +1,79 @@
-import { useState } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { calm } from "./motion";
 import type { FormEvent } from "react";
 import type { Topic } from "./types";
 import { depthName, label, lower, plural } from "./lib";
 import { Wave, Words } from "./Fx";
+
+gsap.registerPlugin(ScrollTrigger);
+
+/** Pinned scene: a knob travels down the depth scale and the name of each depth swaps in. */
+function DepthSlider({ topic }: { topic: Topic }) {
+  const root = useRef<HTMLDivElement>(null);
+  const stops = [
+    ...topic.layers.map((l) => ({
+      tick: String(l.depth),
+      name: depthName(l.depth),
+      line: `${l.depth === 0 ? "Where every model lands first" : "Common only once everything above is ruled out"}: ${l.common.slice(0, 3).map(lower).join(", ")}.`,
+    })),
+    { tick: "off", name: "Off the map", line: `Approaches that never became common in ${topic.layers.reduce((n, l) => n + l.asked, 0)} answers.` },
+  ];
+  const last = stops.length - 1;
+
+  useLayoutEffect(() => {
+    const el = root.current;
+    if (!el) return;
+    const ctx = gsap.context(() => {
+      const names = gsap.utils.toArray<HTMLElement>(".slider-stop", el);
+      const ticks = gsap.utils.toArray<HTMLElement>(".slider-ticks span", el);
+      gsap.set(names.slice(1), { autoAlpha: 0, y: 20 });
+      gsap.set(ticks[0], { opacity: 1 });
+      const tl = gsap.timeline({ scrollTrigger: { trigger: el, start: "top top", end: "bottom bottom", scrub: 0.6 } });
+      tl.to({}, { duration: 0.5 });
+      for (let i = 1; i <= last; i++) {
+        const at = `s${i}`;
+        tl.addLabel(at)
+          .to(".slider-knob", { left: `${(i / last) * 100}%`, rotation: i * 90, duration: 1, ease: "power1.inOut" }, at)
+          .to(".slider-fill", { scaleX: i / last, duration: 1, ease: "power1.inOut" }, at)
+          .to(names[i - 1], { y: -20, autoAlpha: 0, duration: 0.3 }, `${at}+=0.3`)
+          .fromTo(names[i], { y: 20, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.3 }, `${at}+=0.6`)
+          .to(ticks[i - 1], { opacity: 0.45, duration: 0.2 }, `${at}+=0.5`)
+          .to(ticks[i], { opacity: 1, duration: 0.2 }, `${at}+=0.5`)
+          .to({}, { duration: 0.5 });
+      }
+    }, el);
+    return () => ctx.revert();
+  }, [topic, last]);
+
+  return (
+    <div className="slider" ref={root} style={{ height: `${stops.length * 75 + 100}vh` }}>
+      <div className="slider-stage">
+        <div className="wrap">
+          <p className="slider-lead">Every idea sits at a depth.</p>
+          <div className="slider-names">
+            {stops.map((st) => (
+              <div className="slider-stop" key={st.tick}>
+                <p className="slider-name">{st.name}</p>
+                <p className="slider-line">{st.line}</p>
+              </div>
+            ))}
+          </div>
+          <div className="slider-track" aria-hidden="true">
+            <span className="slider-fill" />
+            <span className="slider-knob" />
+          </div>
+          <div className="slider-ticks" aria-hidden="true">
+            {stops.map((st) => (
+              <span key={st.tick}>{st.tick}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 type Result = { tags: string[]; depth: number | null; note: string };
 
@@ -87,6 +158,7 @@ export function Place({ topic }: { topic: Topic }) {
   return (
     <section className="place tone-4" id="place">
       <Wave fill="#0f3d52" />
+      {!calm() && <DepthSlider topic={topic} />}
       <div className="wrap place-grid">
         <div>
           <Words text="Where does your idea sit?" />

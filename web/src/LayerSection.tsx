@@ -229,7 +229,7 @@ export function LayerSection({ topic, layer, deepest }: { topic: Topic; layer: L
               <h3>Take this depth with you</h3>
               <p className="take-prompt">{ruleOutPrompt}</p>
             </div>
-            <button className="copy" onClick={copy}>
+            <button className="copy" data-magnetic onClick={copy}>
               {copied ? "Copied" : "Copy this prompt"}
             </button>
           </div>

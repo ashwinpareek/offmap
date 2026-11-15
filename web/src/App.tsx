@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import indexJson from "./data/index.json";
 import compareJson from "./data/compare.json";
 import type { Layer, Topic, TopicIndex } from "./types";
@@ -7,7 +7,8 @@ import { LayerSection } from "./LayerSection";
 import { Place } from "./Place";
 import { list } from "./lib";
 import { Descent } from "./Descent";
-import { calm, scrollToId, startSmoothScroll, watchReveals } from "./motion";
+import { Marquee, Paint, PillNav, ScrubText, Sticker, Uses, magnetize, useParallax } from "./Flair";
+import { calm, startSmoothScroll, watchReveals } from "./motion";
 
 const topics = indexJson as TopicIndex;
 const loaders = import.meta.glob<{ default: Topic }>("./data/topics/*.json");
@@ -74,11 +75,9 @@ export default function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => (topic ? watchReveals() : undefined), [topic]);
-
-  const go = (id: string) => (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    scrollToId(id);
-  };
+  useEffect(() => magnetize(), []);
+  const heroRef = useRef<HTMLElement>(null);
+  useParallax(heroRef, topic);
 
   const surface: Layer | undefined = topic?.layers[0];
   const deepest = topic ? topic.layers[topic.layers.length - 1].depth : 0;
@@ -104,9 +103,6 @@ export default function App() {
             <span>Offmap</span>
           </a>
           <nav className="top-nav" aria-label="Page">
-            <a href="#depth-0" onClick={go("depth-0")}>Layers</a>
-            <a href="#place" onClick={go("place")}>Your idea</a>
-            <a href="#method" onClick={go("method")}>Method</a>
             <a href={REPO} target="_blank" rel="noreferrer">
               GitHub
             </a>
@@ -115,28 +111,29 @@ export default function App() {
       </header>
 
       <main>
-        <section className="hero tone-0">
+        <section className="hero tone-0" ref={heroRef}>
+          <Sticker kind="struck" speed={1.4} className="st-h1" />
+          <Sticker kind="grid" speed={0.8} className="st-h2" />
+          <Sticker kind="dot" speed={2} className="st-h3" />
           <div className="wrap">
-            <h1 className="lines">
-              {["Every AI gives everyone", "the same idea.", "Offmap digs past it."].map((line, i) => (
-                <span key={line} className="line" style={{ ["--i" as string]: i }}>
-                  <span>{line}</span>
+            <h1 className="words">
+              {["Every AI gives", "everyone the", "same idea."].map((line, li) => (
+                <span className="wl" key={line}>
+                  {line.split(" ").map((w, wi) => (
+                    <span className="w" key={w + wi}>
+                      <span style={{ ["--i" as string]: li * 3 + wi }}>{w}</span>
+                    </span>
+                  ))}
                 </span>
               ))}
+              <span className="wl wl-pink">
+                {"Offmap digs past it.".split(" ").map((w, wi) => (
+                  <span className="w" key={w + wi}>
+                    <span style={{ ["--i" as string]: 9 + wi }}>{w}</span>
+                  </span>
+                ))}
+              </span>
             </h1>
-            <div className="hero-sub">
-              <p>
-                Pick a topic. Offmap asks three AI models the same question again and again, finds the answers they
-                all fall back on, rules those out and asks again. You get the ideas that sit past the obvious ones,
-                each one checked.
-              </p>
-              <ul className="uses">
-                <li>See the answer everyone else is getting</li>
-                <li>Take ideas from one, two or three layers down</li>
-                <li>Copy the prompt that gets you there in any AI</li>
-                <li>Check how common your own idea is</li>
-              </ul>
-            </div>
 
             {topics.length > 1 && (
               <div className="topics" role="radiogroup" aria-label="Topic">
@@ -176,7 +173,30 @@ export default function App() {
 
         {topic && (
           <>
+            <Marquee names={surface!.ideas.map((i) => i.n).filter((n): n is string => !!n)} />
+
+            <ScrubText
+              text={`Pick a topic. Offmap asks three AI models the same question again and again, finds the answers they all fall back on, rules those out and asks again. What is left are the ideas past the obvious ones, each one checked before you see it.`}
+            />
+
+            {!calm() && (
+              <Paint
+                before="Same question. Same answer. Every time."
+                after="So we rule the answer out."
+                sub="Keep scrolling and watch it happen."
+              />
+            )}
+
             {!calm() && <Descent key={`descent-${topic.slug}`} topic={topic} />}
+
+            <Uses
+              items={[
+                { title: "See what everyone else is getting", body: `The ${surface!.stats.n} plain answers for this topic, counted. If your idea is in there, so is everybody's.`, go: "depth-0", label: "Open the surface" },
+                { title: "Take ideas from deeper down", body: "Every layer lists the ideas that passed the check, with the model that wrote each one.", go: "depth-1", label: "Go one layer down" },
+                { title: "Copy the prompt for any depth", body: "Each layer hands you the exact rule-out prompt. Paste it into any AI and start past the obvious.", go: "depth-2", label: "Get a prompt" },
+                { title: "Check your own idea", body: "Type it in. One model call tags it and tells you how many layers from the default it sits.", go: "place", label: "Check my idea" },
+              ]}
+            />
 
             {topic.layers.map((layer) => (
               <LayerSection key={`${topic.slug}-${layer.depth}`} topic={topic} layer={layer} deepest={deepest} />
@@ -278,6 +298,8 @@ export default function App() {
           </>
         )}
       </main>
+
+      <PillNav ready={!!topic} />
 
       <footer className="foot tone-0">
         <div className="wrap foot-row">

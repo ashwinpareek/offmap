@@ -105,7 +105,7 @@ export function Place({ topic }: { topic: Topic }) {
             placeholder={`An idea for ${topic.topic}`}
           />
           <div className="place-actions">
-            <button className="go" type="submit" disabled={!ready || busy}>
+            <button className="go" data-magnetic type="submit" disabled={!ready || busy}>
               {busy ? "Tagging" : "Find its depth"}
             </button>
             {!ready && text.length > 0 && <span className="fine">A full sentence gives the tagger enough to go on.</span>}

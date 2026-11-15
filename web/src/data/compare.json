@@ -1,0 +1,24 @@
+{
+ "topic": "university students",
+ "model": "GPT-OSS 120B",
+ "rows": [
+  {
+   "id": "default",
+   "n": 10,
+   "distinct": 3,
+   "overused": 10
+  },
+  {
+   "id": "diverse",
+   "n": 10,
+   "distinct": 7,
+   "overused": 6
+  },
+  {
+   "id": "avoid_list",
+   "n": 10,
+   "distinct": 8,
+   "overused": 0
+  }
+ ]
+}

@@ -2513,6 +2513,76 @@
           }
         }
       ],
+      "dropped": [
+        {
+          "id": "L1:gemini:gemini-3.5-flash-lite#5",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**DormDesk** is a desktop hardware rental and setup service where students can rent fully assembled dual-monitor workstations delivered directly to their dorm room at the start of each semester. The platform owns all the inventory, handles white-glove delivery, and automatically picks everything up during finals week. It solves the ergonomic and productivity problems of studying from a laptop in bed without relying on peer-to-peer sharing or marketplace logistics.",
+          "tags": {
+            "mechanism": [
+              "rental_sharing",
+              "physical_space_venue"
+            ],
+            "customer": "students",
+            "revenue": "subscription",
+            "form": "web_platform"
+          },
+          "hit": [
+            "rental_sharing"
+          ]
+        },
+        {
+          "id": "L1:groq:qwen/qwen3.8-27b#2",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Develop a \"Skill-Swap Ledger\" where students log hours spent teaching specific micro-skills (like basic Python or resume writing) to earn non-fungible \"credit tokens.\" These tokens can only be redeemed for the exact same duration of instruction from another student, creating a closed-loop economy that de-emphasizes money and strictly incentivizes reciprocity and practical learning.",
+          "tags": {
+            "mechanism": [
+              "peer_to_peer_exchange",
+              "skills_assessment_credential"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "peer_to_peer_exchange"
+          ]
+        },
+        {
+          "id": "L1:groq:qwen/qwen3.8-27b#7",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Develop a \"Skill-Swap Studio\" platform where students trade bespoke, one-on-one tutoring sessions in niche academic subjects for practical real-world portfolio projects, such as professional video editing or brand design. This creates a symbiotic ecosystem where academic mastery fuels creative output and practical skills enhance employability, without relying on traditional money exchanges.",
+          "tags": {
+            "mechanism": [
+              "peer_to_peer_exchange",
+              "ai_tutor_coach"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "peer_to_peer_exchange"
+          ]
+        },
+        {
+          "id": "L1:groq:qwen/qwen3.8-27b#8",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Develop a \"Skill-Swap Studio\" platform where students trade specialized knowledge for credit-bearing micro-credentials, such as exchanging graphic design tutorials for data science workshops. This direct service-for-service model eliminates the need for intermediaries or payment processing while gamifying the learning experience through verifiable skill badges.",
+          "tags": {
+            "mechanism": [
+              "peer_to_peer_exchange",
+              "skills_assessment_credential"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "peer_to_peer_exchange"
+          ]
+        }
+      ],
       "summary": {
         "n_ideas": 26,
         "distinct_primary_mechanisms": 13,
@@ -2774,6 +2844,228 @@
           }
         }
       ],
+      "dropped": [
+        {
+          "id": "L2:gemini:gemini-3.5-flash-lite#5",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**StudyPod** is a mobile application that automatically locks distracting social media apps on a student's phone whenever they enter a designated university library or study hall. To unlock their phone early, users must pay a micro-fine that is instantly pooled together and redistributed as coffee shop vouchers to the students who remained focused the longest.",
+          "tags": {
+            "mechanism": [
+              "gamification",
+              "automation_workflow"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "mobile_app"
+          },
+          "hit": [
+            "gamification"
+          ]
+        },
+        {
+          "id": "L2:gemini:gemini-3.5-flash-lite#6",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**CampusCatering** operates shared commercial kitchens right next to student dorms, allowing culinary students to run their own independent delivery-only restaurants during dinner hours. The startup handles health department permits, bulk ingredient purchasing, and the checkout portal, turning underutilized campus real estate into micro-incubators for aspiring student chefs.",
+          "tags": {
+            "mechanism": [
+              "marketplace_two_sided",
+              "on_demand_gig_service"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "web_platform"
+          },
+          "hit": [
+            "marketplace_two_sided"
+          ]
+        },
+        {
+          "id": "L2:gemini:gemini-3.5-flash-lite#7",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**CampusFridge** provides students living in dorms with compact, smart freezer lockers placed in every residential building, pre-stocked with discounted bulk meals, frozen groceries, and local restaurant leftovers. Students use a mobile app to instantly unlock a compartment and grab food on the go, eliminating the hassle of long grocery trips or full communal kitchens. The company automates inventory management and local food surplus pickup, keeping prices lower than campus dining halls while reducing regional food waste.",
+          "tags": {
+            "mechanism": [
+              "rental_sharing",
+              "recycling_circular_reuse"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "mobile_app"
+          },
+          "hit": [
+            "rental_sharing"
+          ]
+        },
+        {
+          "id": "L2:gemini:gemini-3.5-flash-lite#9",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**ProjectNest** is an on-campus hardware library that lets engineering students rent expensive microcontrollers, soldering irons, and specialized testing equipment directly from a secure kiosk in the student union. Users unlock gear using their student ID and pay a small hourly fee, eliminating the need to buy high-cost tools for single-semester projects.",
+          "tags": {
+            "mechanism": [
+              "rental_sharing"
+            ],
+            "customer": "students",
+            "revenue": "service_fee",
+            "form": "hardware_product"
+          },
+          "hit": [
+            "rental_sharing"
+          ]
+        },
+        {
+          "id": "L2:groq:openai/gpt-oss-120b#1",
+          "model": "groq:openai/gpt-oss-120b",
+          "text": "A subscription service ships compact, lab‑grade experiment kits straight to dorm rooms, letting students run real‑world physics, chemistry, biology, or engineering projects without ever stepping foot in a campus lab. Each month’s kit includes all reagents, safety equipment, and step‑by‑step video guides that sync with the university’s course syllabus, so students can reinforce lecture concepts while building a portable portfolio of hands‑on work. The platform also logs results in a personal digital lab notebook, enabling easy sharing of data with professors or future employers.",
+          "tags": {
+            "mechanism": [
+              "subscription_box_physical",
+              "summarization_notes"
+            ],
+            "customer": "students",
+            "revenue": "subscription",
+            "form": "web_platform"
+          },
+          "hit": [
+            "summarization_notes"
+          ]
+        },
+        {
+          "id": "L2:groq:qwen/qwen3.8-27b#0",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Develop a platform that aggregates and standardizes raw, anonymized experimental data from student labs to create a shared scientific corpus. This resource allows researchers to validate hypotheses against a much larger body of evidence than any single university possesses, accelerating replication and discovery without requiring direct user interaction or content curation.",
+          "tags": {
+            "mechanism": [
+              "search_knowledge_base",
+              "open_data_public_goods"
+            ],
+            "customer": "researchers",
+            "revenue": "data_licensing",
+            "form": "web_platform"
+          },
+          "hit": [
+            "search_knowledge_base"
+          ]
+        },
+        {
+          "id": "L2:groq:qwen/qwen3.8-27b#2",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Develop a platform that aggregates and visualizes real-time, anonymized data on local living costs and accommodation quality to empower students with precise, evidence-based budgeting insights. By crowdsourcing verified expenses such as utility bills and grocery prices, the service creates a dynamic index that helps students predict their true cost of living before committing to a lease or move. This tool serves as a financial decision-support system, reducing the uncertainty and overestimation of expenses that often lead to student debt.",
+          "tags": {
+            "mechanism": [
+              "analytics_dashboard",
+              "search_knowledge_base"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "search_knowledge_base"
+          ]
+        },
+        {
+          "id": "L2:groq:qwen/qwen3.8-27b#3",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Develop a platform that aggregates and visualizes real-time data from university research labs to identify gaps in the specific datasets students need for their theses or projects. This tool allows students to directly request access to specialized experimental data or proprietary benchmarks that are otherwise locked behind paywalls or inaccessible to undergraduates, thereby accelerating academic progress.",
+          "tags": {
+            "mechanism": [
+              "search_knowledge_base",
+              "analytics_dashboard"
+            ],
+            "customer": "students",
+            "revenue": "b2b_license_saas",
+            "form": "web_platform"
+          },
+          "hit": [
+            "search_knowledge_base"
+          ]
+        },
+        {
+          "id": "L2:groq:qwen/qwen3.8-27b#4",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Develop a platform that aggregates and visualizes real-time social and academic trends on campus to help students identify high-impact collaboration opportunities based on shared project goals. The system monitors public university channels and event data to surface emerging themes, allowing students to form focused project teams around timely, relevant topics that might otherwise go unnoticed. This approach leverages collective intelligence to accelerate interdisciplinary innovation without relying on direct user matching or content generation.",
+          "tags": {
+            "mechanism": [
+              "analytics_dashboard",
+              "search_knowledge_base"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "search_knowledge_base"
+          ]
+        },
+        {
+          "id": "L2:groq:qwen/qwen3.8-27b#5",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Leverage the university's existing physical infrastructure to create a decentralized, student-run network for the immediate, on-demand sale of surplus course materials and leftover group project resources. This model relies on proximity and real-time availability within specific dorms or departmental buildings to eliminate shipping costs and friction, allowing students to offload unused items directly to neighbors who need them right now.",
+          "tags": {
+            "mechanism": [
+              "marketplace_two_sided",
+              "local_discovery"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "mobile_app"
+          },
+          "hit": [
+            "marketplace_two_sided"
+          ]
+        },
+        {
+          "id": "L2:groq:qwen/qwen3.8-27b#6",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Develop a platform that aggregates and visualizes real-time, anonymized data from university library access logs and campus Wi-Fi hotspots to identify \"quiet hours\" and high-intensity collaboration zones. This data allows students to dynamically choose the optimal physical environment for their specific task, whether they need deep silence or energetic peer interaction, thereby reducing decision fatigue and improving study efficiency.",
+          "tags": {
+            "mechanism": [
+              "analytics_dashboard",
+              "search_knowledge_base"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "search_knowledge_base"
+          ]
+        },
+        {
+          "id": "L2:groq:qwen/qwen3.8-27b#8",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Develop a platform that facilitates the direct licensing of student-developed software libraries and algorithms to corporate engineering teams, allowing creators to earn revenue by granting read-only access to their open-source contributions without giving away full source code control. This model transforms academic projects into monetizable intellectual property by providing companies with a vetted pipeline of innovative, niche technical solutions that are often harder to find in commercial app stores.",
+          "tags": {
+            "mechanism": [
+              "hiring_talent_matching",
+              "marketplace_two_sided"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "web_platform"
+          },
+          "hit": [
+            "marketplace_two_sided"
+          ]
+        },
+        {
+          "id": "L2:groq:qwen/qwen3.8-27b#9",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Build a platform that aggregates and visualizes real-time data from university research labs to identify underutilized equipment and surplus materials, allowing student teams to commission small-scale industrial processes directly without navigating complex departmental bureaucracy. This approach transforms isolated academic assets into a shared creative infrastructure for product development and prototyping.",
+          "tags": {
+            "mechanism": [
+              "search_knowledge_base",
+              "analytics_dashboard"
+            ],
+            "customer": "students",
+            "revenue": "b2b_license_saas",
+            "form": "web_platform"
+          },
+          "hit": [
+            "search_knowledge_base"
+          ]
+        }
+      ],
       "summary": {
         "n_ideas": 16,
         "distinct_primary_mechanisms": 8,
@@ -2946,6 +3238,341 @@
             "revenue": "freemium",
             "form": "web_platform"
           }
+        }
+      ],
+      "dropped": [
+        {
+          "id": "L3:gemini:gemini-3.5-flash-lite#0",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**CampusFridge** installs communal, smartphone-unlocked refrigerators in college dorm hallways where students can store their groceries securely. Brands and local restaurants stock these units with free product samples, turning the shared appliance into an interactive marketing channel funded by corporate sponsorships.",
+          "tags": {
+            "mechanism": [
+              "rental_sharing",
+              "hardware_device_iot"
+            ],
+            "customer": "students",
+            "revenue": "advertising",
+            "form": "hardware_product"
+          },
+          "hit": [
+            "hardware_device_iot",
+            "rental_sharing"
+          ]
+        },
+        {
+          "id": "L3:gemini:gemini-3.5-flash-lite#1",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "A secure, private campus network exclusively for students to anonymously vote on proposed university policy changes and budget allocations. The platform aggregates these votes into verified sentiment reports delivered directly to student government leaders and university administrators. This bridges the communication gap between the student body and decision-makers without relying on social media noise.",
+          "tags": {
+            "mechanism": [
+              "verification_trust_reputation",
+              "analytics_dashboard"
+            ],
+            "customer": "students",
+            "revenue": "b2b_license_saas",
+            "form": "web_platform"
+          },
+          "hit": [
+            "analytics_dashboard",
+            "verification_trust_reputation"
+          ]
+        },
+        {
+          "id": "L3:gemini:gemini-3.5-flash-lite#2",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**DormDrop** is a specialized laundry service that installs smart, coinless payment modules directly into existing campus washing machines and sends text alerts when loads are finished. Students manage their wash cycles and pay digitally through a campus-specific web app without needing physical quarters or laundry cards.",
+          "tags": {
+            "mechanism": [
+              "payments_fintech_tool",
+              "monitoring_alerting"
+            ],
+            "customer": "students",
+            "revenue": "service_fee",
+            "form": "web_platform"
+          },
+          "hit": [
+            "monitoring_alerting"
+          ]
+        },
+        {
+          "id": "L3:gemini:gemini-3.5-flash-lite#3",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**CampusCrib** lets students securely sublease their empty dorm rooms or off-campus apartments directly to visiting college athletes, guest researchers, and tournament participants during academic breaks. It operates as a closed booking platform tied exclusively to active university email domains, ensuring hosts only accommodate vetted peers and academic visitors.",
+          "tags": {
+            "mechanism": [
+              "rental_sharing",
+              "booking_reservation"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "web_platform"
+          },
+          "hit": [
+            "rental_sharing"
+          ]
+        },
+        {
+          "id": "L3:gemini:gemini-3.5-flash-lite#4",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**DormPlate** is a campus dining subscription that partners with local independent restaurants to deliver bulk, family-style meals directly to student dormitories every Sunday evening. Students subscribe for the semester to receive weekly prepared dinners, solving their Sunday-night food scarcity without relying on expensive delivery apps or campus dining halls.",
+          "tags": {
+            "mechanism": [
+              "subscription_box_physical",
+              "delivery_logistics"
+            ],
+            "customer": "students",
+            "revenue": "subscription",
+            "form": "web_platform"
+          },
+          "hit": [
+            "delivery_logistics"
+          ]
+        },
+        {
+          "id": "L3:gemini:gemini-3.5-flash-lite#6",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**DormBite** is a campus delivery service exclusively for late-night cravings, operating directly out of student dorm rooms. Students run mini-pantries from their mini-fridges, fulfilling cravings for snacks and drinks for their neighbors within ten minutes. Orders are placed via a simple web form and dropped off by foot by students living down the hall.",
+          "tags": {
+            "mechanism": [
+              "marketplace_two_sided",
+              "delivery_logistics"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "web_platform"
+          },
+          "hit": [
+            "delivery_logistics",
+            "marketplace_two_sided"
+          ]
+        },
+        {
+          "id": "L3:gemini:gemini-3.5-flash-lite#7",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "Campus Canteen is a dark kitchen cooperative operated by culinary arts students that prepares hot meals and sells them exclusively through university vending machines. Students use their campus IDs to purchase chef-crafted dinners directly between classes without waiting in dining hall lines.",
+          "tags": {
+            "mechanism": [
+              "group_buying_cooperative",
+              "on_demand_gig_service"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "physical_service"
+          },
+          "hit": [
+            "on_demand_gig_service"
+          ]
+        },
+        {
+          "id": "L3:gemini:gemini-3.5-flash-lite#8",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "**DormRoomDraft** connects architecture and interior design majors directly with students living in campus housing who want to aesthetically optimize their cramped rooms. The student designers earn side income by providing custom spatial layouts, lighting schemes, and DIY furniture hacks tailored to specific dorm floor plans and tight budgets.",
+          "tags": {
+            "mechanism": [
+              "marketplace_two_sided",
+              "recommendation_matching"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "web_platform"
+          },
+          "hit": [
+            "marketplace_two_sided",
+            "recommendation_matching"
+          ]
+        },
+        {
+          "id": "L3:gemini:gemini-3.5-flash-lite#9",
+          "model": "gemini:gemini-3.5-flash-lite",
+          "text": "Campus-based local micro-breweries operated entirely by brewing science students, who brew and sell specialty craft sodas and small-batch kombuchas directly to dorms via pneumatic tube networks. This venture provides practical pilot-plant experience while funding undergraduate research grants through direct-to-consumer sales.",
+          "tags": {
+            "mechanism": [
+              "peer_to_peer_exchange",
+              "delivery_logistics"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "physical_service"
+          },
+          "hit": [
+            "delivery_logistics",
+            "peer_to_peer_exchange"
+          ]
+        },
+        {
+          "id": "L3:groq:openai/gpt-oss-120b#7",
+          "model": "groq:openai/gpt-oss-120b",
+          "text": "**Idea:** Create a university‑wide “Learning‑Outcome Alignment Hub” that lets student clubs, project groups, and extracurricular initiatives map their activities to official curriculum competencies. The platform automatically generates a formal report showing which academic skills were practiced, which faculty advisors can review to award elective credit or fulfill graduation requirements—turning informal experiences into recognized, credit‑eligible learning without any marketplace, matchmaking, or gig‑style mechanics.",
+          "tags": {
+            "mechanism": [
+              "automation_workflow",
+              "content_generation"
+            ],
+            "customer": "students",
+            "revenue": "b2b_license_saas",
+            "form": "web_platform"
+          },
+          "hit": [
+            "automation_workflow",
+            "content_generation"
+          ]
+        },
+        {
+          "id": "L3:groq:openai/gpt-oss-120b#8",
+          "model": "groq:openai/gpt-oss-120b",
+          "text": "**Campus Impact Lab** – a web‑based toolkit that walks university students through every stage of launching a campus‑wide sustainability or community‑service project. The platform supplies ready‑made templates for feasibility studies, budget planning, compliance paperwork, and impact reporting, and it automatically links teams to relevant university offices, local NGOs, and micro‑grant programs, turning ideas into actionable, funded initiatives.",
+          "tags": {
+            "mechanism": [
+              "automation_workflow",
+              "recommendation_matching"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "automation_workflow",
+            "recommendation_matching"
+          ]
+        },
+        {
+          "id": "L3:groq:openai/gpt-oss-120b#9",
+          "model": "groq:openai/gpt-oss-120b",
+          "text": "**Digital Legacy Vault for Students** – a secure, time‑locked cloud vault where undergraduates can deposit personal artifacts—photos, project files, reflections, even short video messages—and set a release date (e.g., graduation day, 5‑year reunion, or a future milestone). The service automatically encrypts each upload, stores it on a decentralized network for redundancy, and sends a single “unlock” link to the student’s chosen recipients when the preset date arrives, giving graduates a hassle‑free way to preserve and share their digital footprints with friends, family, or future employers.",
+          "tags": {
+            "mechanism": [
+              "automation_workflow",
+              "security_privacy_tool"
+            ],
+            "customer": "students",
+            "revenue": "subscription",
+            "form": "web_platform"
+          },
+          "hit": [
+            "automation_workflow"
+          ]
+        },
+        {
+          "id": "L3:groq:qwen/qwen3.8-27b#0",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Leverage the university’s existing archive of unpublished student theses and capstone projects to create a licensing platform where commercial R&D teams can directly acquire exclusive rights to niche academic research. This model monetizes dormant intellectual property usually left in filed cabinets, allowing students to share in the revenue of their innovative work without needing to start a traditional business from scratch.",
+          "tags": {
+            "mechanism": [
+              "marketplace_two_sided",
+              "search_knowledge_base"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "web_platform"
+          },
+          "hit": [
+            "marketplace_two_sided",
+            "search_knowledge_base"
+          ]
+        },
+        {
+          "id": "L3:groq:qwen/qwen3.8-27b#1",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Develop a platform that facilitates cross-disciplinary \"skill swap weekends,\" where students dedicate a block of time to teach one specific micro-skill (like basic image editing or public speaking) in exchange for learning a completely different one (like basic coding or creative writing) from a peer outside their major. This forces active, reciprocal knowledge transfer within short, structured sessions rather than passive consumption, creating immediate, tangible value for both parties through collaborative practice.",
+          "tags": {
+            "mechanism": [
+              "peer_to_peer_exchange",
+              "events_meetups"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "peer_to_peer_exchange"
+          ]
+        },
+        {
+          "id": "L3:groq:qwen/qwen3.8-27b#2",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Leverage the university's official API to build a \"Degree Audit Simulator\" that allows students to drag and drop potential courses into a visual timeline to instantly see how they impact their graduation date, GPA, and prerequisite chains. This tool helps students proactively identify bottlenecks and optimize their course loads for specific career goals before they actually register.",
+          "tags": {
+            "mechanism": [
+              "simulation_digital_twin",
+              "scheduling_planning"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "scheduling_planning"
+          ]
+        },
+        {
+          "id": "L3:groq:qwen/qwen3.8-27b#3",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Create a narrative-driven platform where students build and publish interactive, branching-choice stories that critique or satirize their specific academic disciplines. This forces participants to deeply internalize complex course material by restructuring it into engaging, speculative fiction rather than passive study.",
+          "tags": {
+            "mechanism": [
+              "ai_tutor_coach",
+              "gamification"
+            ],
+            "customer": "students",
+            "revenue": "b2b_license_saas",
+            "form": "web_platform"
+          },
+          "hit": [
+            "ai_tutor_coach",
+            "gamification"
+          ]
+        },
+        {
+          "id": "L3:groq:qwen/qwen3.8-27b#4",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Launch a collective bargaining platform that automatically aggregates student spending habits across a university to negotiate exclusive, tiered discounts with local businesses in exchange for guaranteed foot traffic. By pooling individual purchasing power, students can secure better prices on essentials like meals and transport than any single individual could, while businesses gain predictable customer acquisition without heavy marketing spend. This transforms the static student demographic into a unified economic entity with tangible negotiating leverage.",
+          "tags": {
+            "mechanism": [
+              "group_buying_cooperative",
+              "marketplace_two_sided"
+            ],
+            "customer": "students",
+            "revenue": "transaction_fee_commission",
+            "form": "web_platform"
+          },
+          "hit": [
+            "marketplace_two_sided"
+          ]
+        },
+        {
+          "id": "L3:groq:qwen/qwen3.8-27b#5",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Launch a \"Skill Barter\" platform where students trade specific, high-value micro-skills—such as resume review, basic coding help, or photography critiques—using a non-monetized internal currency based strictly on hours contributed. This model eliminates financial barriers while fostering genuine mentorship and professional networking, ensuring that value is exchanged for expertise rather than cash.",
+          "tags": {
+            "mechanism": [
+              "peer_to_peer_exchange",
+              "mentorship_expert_network"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "peer_to_peer_exchange"
+          ]
+        },
+        {
+          "id": "L3:groq:qwen/qwen3.8-27b#8",
+          "model": "groq:qwen/qwen3.8-27b",
+          "text": "Launch a \"Skill Barter\" platform where students trade specific, time-bound professional skills (like graphic design or coding) directly for other highly sought-after skills, creating a closed-loop economy of mutual benefit. This model removes financial transactions entirely, relying instead on a transparent, time-based credit system that ensures equitable exchange of expertise across departments.",
+          "tags": {
+            "mechanism": [
+              "peer_to_peer_exchange",
+              "verification_trust_reputation"
+            ],
+            "customer": "students",
+            "revenue": "unspecified",
+            "form": "web_platform"
+          },
+          "hit": [
+            "peer_to_peer_exchange",
+            "verification_trust_reputation"
+          ]
         }
       ],
       "summary": {

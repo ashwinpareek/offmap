@@ -43,6 +43,9 @@ def peel(topic: str, baseline: list[dict], models: list[str], tagger: str, gen: 
             "layer": depth, "banned_going_in": list(banned), "new_bans": new_bans,
             "generated": len(raw), "verified": len(kept), "leaked": len(leaked),
             "untagged": len(failed), "ideas": kept,
+            # kept for the record: what the model wrote when it ignored the bans
+            "dropped": [{**i, "hit": sorted(set(i["tags"]["mechanism"]) & set(banned))}
+                        for i in leaked],
             "summary": summarize_set(kept, banned) if kept else None,
         })
         banned = banned + new_bans

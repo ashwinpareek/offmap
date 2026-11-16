@@ -10,6 +10,7 @@ import { Wave, Words, startScrollFx } from "./Fx";
 import { Story } from "./Story";
 import { Cine } from "./Cine";
 import { Flight, IdeaCarousel } from "./Showpieces";
+import { Chapters, Loader, Tumblers } from "./Chapters";
 import { Cursor, Marquee, Paint, PillNav, Uses, magnetize, tiltCards, useParallax } from "./Flair";
 import { calm, startSmoothScroll, watchReveals } from "./motion";
 
@@ -70,10 +71,11 @@ export default function App() {
   };
 
   const [intro, setIntro] = useState(() => !calm());
+  const [wide] = useState(() => window.matchMedia("(min-width: 1000px) and (min-height: 640px)").matches);
   useEffect(() => {
     startSmoothScroll();
     if (!intro) return;
-    const t = window.setTimeout(() => setIntro(false), 2300);
+    const t = window.setTimeout(() => setIntro(false), 4000); // safety net; the loader normally ends itself
     return () => window.clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -90,17 +92,7 @@ export default function App() {
 
   return (
     <>
-      {intro && (
-        <div className="intro" aria-hidden="true">
-          <div className="intro-lockup">
-            <svg viewBox="0 0 32 32">
-              <rect className="intro-box" x="3" y="3" width="19" height="19" pathLength="1" />
-              <rect className="intro-dot" x="22" y="22" width="8.5" height="8.5" />
-            </svg>
-            <span>Offmap</span>
-          </div>
-        </div>
-      )}
+      {intro && <Loader onDone={() => setIntro(false)} />}
       <div className="grain" aria-hidden="true" />
       <Cursor />
       <div className="progress" aria-hidden="true" />
@@ -186,9 +178,13 @@ export default function App() {
               ]}
             />
 
-            {topic.layers.map((layer) => (
-              <LayerSection key={`${topic.slug}-${layer.depth}`} topic={topic} layer={layer} deepest={deepest} />
-            ))}
+            {wide && !calm() ? (
+              <Chapters key={`ch-${topic.slug}`} topic={topic} />
+            ) : (
+              topic.layers.map((layer) => <LayerSection key={`${topic.slug}-${layer.depth}`} topic={topic} layer={layer} deepest={deepest} />)
+            )}
+
+            <Tumblers key={`tum-${topic.slug}`} topic={topic} />
 
             <Place key={`place-${topic.slug}`} topic={topic} />
 
@@ -292,6 +288,9 @@ export default function App() {
       <PillNav ready={!!topic} />
 
       <footer className="foot tone-0">
+        <svg className="scallop" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0 0h1200v18c-25 40-75 40-100 0-25 40-75 40-100 0-25 40-75 40-100 0-25 40-75 40-100 0-25 40-75 40-100 0-25 40-75 40-100 0-25 40-75 40-100 0-25 40-75 40-100 0-25 40-75 40-100 0-25 40-75 40-100 0-25 40-75 40-100 0-25 40-75 40-100 0z" />
+        </svg>
         <p className="foot-word" aria-hidden="true">
           {"Offmap".split("").map((c, i) => (
             <span key={i}>{c}</span>

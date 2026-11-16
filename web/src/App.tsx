@@ -7,7 +7,7 @@ import { LayerSection } from "./LayerSection";
 import { Place } from "./Place";
 import { list } from "./lib";
 import { Wave, Words, startScrollFx } from "./Fx";
-import { Ambient, Story } from "./Story";
+import { ContourBg, Story } from "./Story";
 import { Cursor, Marquee, Paint, PillNav, ScrubText, Sticker, Uses, magnetize, tiltCards, useParallax } from "./Flair";
 import { calm, startSmoothScroll, watchReveals } from "./motion";
 
@@ -118,7 +118,7 @@ export default function App() {
 
       <main>
         <section className="hero tone-0" ref={heroRef}>
-          {topic && <Ambient key={`amb-${topic.slug}`} topic={topic} />}
+          {topic && <ContourBg key={`bg-${topic.slug}`} topic={topic} />}
           <Sticker kind="struck" speed={1.4} className="st-h1" />
           <Sticker kind="grid" speed={0.8} className="st-h2" />
           <Sticker kind="dot" speed={2} className="st-h3" />

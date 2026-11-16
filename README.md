@@ -50,8 +50,8 @@ better or merely stranger. Raw model replies are in `data/cache.jsonl`.
 
 ## The web app
 
-`web/` is a Vite + React page that shows one square per answer, a scroll-driven canvas scene of
-the whole method (`ScrollSequence`, which can also play a rendered frame sequence), then each layer down with what was ruled out, what was kept, what was
+`web/` is a Vite + React page that shows one square per answer, a scroll-driven contour map of
+the whole method (peaks are the approaches the models pile onto; drawn on a canvas by `ScrollSequence`), then each layer down with what was ruled out, what was kept, what was
 dropped and why. Each layer has a "Copy this prompt" button with the exact rule-out prompt. "Where does your idea sit?"
 makes one live model call (`web/api/place.js`) to tag an idea with the same prompt and
 vocabulary as the pipeline, then looks its approach up in the measured layers.

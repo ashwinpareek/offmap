@@ -1,11 +1,39 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { Suspense, lazy, useCallback, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import type { Topic } from "./types";
 import { depthName, label, plural } from "./lib";
 import { ScrollSequence } from "./ScrollSequence";
 import type { Draw } from "./ScrollSequence";
-import { Stage3D, canWebGL } from "./Stage3D";
+import { canWebGL } from "./motion";
 import type { Cube } from "./Stage3D";
+
+const Stage3D = lazy(() => import("./Stage3D"));
+
+/** One cube per answer, in the order the 3D scene expects. */
+export function cubesFor(layers: Topic["layers"]): Cube[] {
+  const top = layers[0].stats.primary.slice(0, 3).map(([t]) => t);
+  const out: Cube[] = layers[0].ideas.map((idea, k) => ({ layer: 0, out: false, rank: top.indexOf(idea.k[0]) < 0 ? 3 : top.indexOf(idea.k[0]), delay: ((k * 37) % 100) / 285 }));
+  layers.slice(1).forEach((l) => {
+    const total = l.kept + l.dropped + l.untagged;
+    for (let j = 0; j < total; j++) out.push({ layer: l.depth, out: j >= l.kept, rank: 0, delay: ((j * 53) % 100) / 330 });
+  });
+  return out;
+}
+
+/** The floating cubes on their own, for the top of the page. */
+export function Ambient({ topic }: { topic: Topic }) {
+  const still = useRef(0);
+  const cubes = useMemo(() => cubesFor(topic.layers), [topic]);
+  const [ok] = useState(() => canWebGL() && window.matchMedia("(min-width: 900px)").matches);
+  if (!ok) return null;
+  return (
+    <div className="ambient" aria-hidden="true">
+      <Suspense fallback={null}>
+        <Stage3D cubes={cubes} layers={topic.layers.length} progress={still} ambient />
+      </Suspense>
+    </div>
+  );
+}
 
 const TONES = ["#f1f4f2", "#d2e3e2", "#8fbbc3", "#0f3d52"];
 const INK = "#0a2230";
@@ -36,15 +64,7 @@ export function Story({ topic }: { topic: Topic }) {
   const stage = useRef<HTMLDivElement>(null);
   const prog = useRef(0);
   const [gl] = useState(canWebGL);
-  const cubes = useMemo<Cube[]>(() => {
-    const top = layers[0].stats.primary.slice(0, 3).map(([t]) => t);
-    const out: Cube[] = layers[0].ideas.map((idea, k) => ({ layer: 0, out: false, rank: top.indexOf(idea.k[0]) < 0 ? 3 : top.indexOf(idea.k[0]), delay: ((k * 37) % 100) / 285 }));
-    layers.slice(1).forEach((l) => {
-      const total = l.kept + l.dropped + l.untagged;
-      for (let j = 0; j < total; j++) out.push({ layer: l.depth, out: j >= l.kept, rank: 0, delay: ((j * 53) % 100) / 330 });
-    });
-    return out;
-  }, [layers]);
+  const cubes = useMemo(() => cubesFor(layers), [layers]);
 
   const { dots, clumps } = useMemo(() => {
     const rand = rng(11);
@@ -216,7 +236,12 @@ export function Story({ topic }: { topic: Topic }) {
   const deepest = layers[n - 1];
   return (
     <ScrollSequence length={n * 1.5 + 0.5} draw={gl ? undefined : draw} onProgress={onProgress} className="story" label="How Offmap works, step by step">
-      {gl && <Stage3D cubes={cubes} layers={n} progress={prog} />}
+      {gl && (
+        <Suspense fallback={null}>
+          <Stage3D cubes={cubes} layers={n} progress={prog} />
+        </Suspense>
+      )}
+      <div className="vignette" aria-hidden="true" />
       <div className="wrap story-over" ref={stage}>
         <p className="story-num" aria-hidden="true">
           0

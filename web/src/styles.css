@@ -661,3 +661,46 @@ html, body { overflow-x: clip; }
   .story-num { font-size: 3.4rem; margin-bottom: 8px; }
   .story-cap p { font-size: 1rem; }
 }
+
+/* ── finish layer ────────────────────────────────── */
+
+/* film grain over everything, very light */
+.grain { position: fixed; inset: -50%; z-index: 60; pointer-events: none; opacity: 0.055; mix-blend-mode: multiply; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); animation: grain 900ms steps(6) infinite; }
+@keyframes grain { 0% { transform: translate(0, 0); } 20% { transform: translate(-3%, 2%); } 40% { transform: translate(2%, -4%); } 60% { transform: translate(-2%, 3%); } 80% { transform: translate(4%, 1%); } 100% { transform: translate(0, 0); } }
+
+.vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 50% 55%, transparent 52%, rgb(8 32 45 / 0.2) 100%); }
+
+/* floating cubes behind the opening headline */
+.ambient { position: absolute; inset: 0; z-index: 0; -webkit-mask-image: linear-gradient(100deg, transparent 22%, #000 62%); mask-image: linear-gradient(100deg, transparent 22%, #000 62%); opacity: 0; animation: fade-up 1600ms ease 2300ms forwards; }
+@media (min-width: 900px) { .hero .sticker { display: none; } .hero { min-height: 100vh; } }
+
+/* cursor */
+.has-cursor, .has-cursor * { cursor: none !important; }
+.cursor-dot, .cursor-ring { position: fixed; left: 0; top: 0; z-index: 70; pointer-events: none; display: none; }
+.has-cursor .cursor-dot, .has-cursor .cursor-ring { display: grid; }
+.cursor-dot { width: 8px; height: 8px; margin: -4px 0 0 -4px; background: var(--chart); }
+.cursor-ring { width: 38px; height: 38px; margin: -19px 0 0 -19px; border: 1.5px solid var(--chart); border-radius: 50%; place-items: center; transition: width 300ms cubic-bezier(0.22, 1, 0.36, 1), height 300ms cubic-bezier(0.22, 1, 0.36, 1), margin 300ms cubic-bezier(0.22, 1, 0.36, 1), background 200ms ease, opacity 200ms ease; mix-blend-mode: normal; }
+.cursor-ring span { font-size: 0.6875rem; font-weight: 700; color: #fff; opacity: 0; transition: opacity 150ms ease; white-space: nowrap; }
+.cursor-ring.is-over { width: 54px; height: 54px; margin: -27px 0 0 -27px; background: rgb(194 36 122 / 0.14); }
+.cursor-ring.is-named { width: 72px; height: 72px; margin: -36px 0 0 -36px; background: var(--chart); }
+.cursor-ring.is-named span { opacity: 1; }
+.cursor-ring.is-away { opacity: 0; }
+
+/* cards lean and catch the light */
+.deal-card { --tx: 0deg; --ty: 0deg; --mx: 50%; --my: 50%; overflow: hidden; }
+.deal-0 { transform: rotate(-2deg) perspective(1100px) rotateX(var(--tx)) rotateY(var(--ty)); }
+.deal-1 { transform: rotate(1.6deg) perspective(1100px) rotateX(var(--tx)) rotateY(var(--ty)); }
+.deal-2 { transform: rotate(-1deg) perspective(1100px) rotateX(var(--tx)) rotateY(var(--ty)); }
+.deal-3 { transform: rotate(2deg) perspective(1100px) rotateX(var(--tx)) rotateY(var(--ty)); }
+.deal-card::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(420px circle at var(--mx) var(--my), rgb(255 255 255 / 0.55), transparent 60%); opacity: 0; transition: opacity 300ms ease; }
+.deal-card:hover::after { opacity: 1; }
+.deal-3::after { background: radial-gradient(420px circle at var(--mx) var(--my), rgb(255 156 205 / 0.28), transparent 60%); }
+.deal-card > * { position: relative; z-index: 1; }
+
+@media (prefers-reduced-motion: reduce) { .grain { animation: none; } .ambient { opacity: 1; } }
+
+.hero > .wrap { position: relative; z-index: 2; }
+.ambient { z-index: 0; -webkit-mask-image: linear-gradient(100deg, transparent 30%, #000 70%); mask-image: linear-gradient(100deg, transparent 30%, #000 70%); }
+.vignette { background: radial-gradient(ellipse at 50% 55%, transparent 60%, rgb(8 32 45 / 0.12) 100%); }
+.cursor-ring span { font-size: 0.75rem; letter-spacing: 0.01em; }
+.ambient { -webkit-mask-image: linear-gradient(100deg, transparent 44%, #000 80%); mask-image: linear-gradient(100deg, transparent 44%, #000 80%); }

@@ -7,8 +7,8 @@ import { LayerSection } from "./LayerSection";
 import { Place } from "./Place";
 import { list } from "./lib";
 import { Wave, Words, startScrollFx } from "./Fx";
-import { Story } from "./Story";
-import { Marquee, Paint, PillNav, ScrubText, Sticker, Uses, magnetize, useParallax } from "./Flair";
+import { Ambient, Story } from "./Story";
+import { Cursor, Marquee, Paint, PillNav, ScrubText, Sticker, Uses, magnetize, tiltCards, useParallax } from "./Flair";
 import { calm, startSmoothScroll, watchReveals } from "./motion";
 
 const topics = indexJson as TopicIndex;
@@ -78,6 +78,7 @@ export default function App() {
   useEffect(() => (topic ? watchReveals() : undefined), [topic]);
   useEffect(() => (topic ? startScrollFx() : undefined), [topic]);
   useEffect(() => magnetize(), []);
+  useEffect(() => tiltCards(), []);
   const heroRef = useRef<HTMLElement>(null);
   useParallax(heroRef, topic);
 
@@ -98,6 +99,8 @@ export default function App() {
           </div>
         </div>
       )}
+      <div className="grain" aria-hidden="true" />
+      <Cursor />
       <div className="progress" aria-hidden="true" />
       <header className="top tone-0" id="top">
         <div className="wrap top-row">
@@ -115,6 +118,7 @@ export default function App() {
 
       <main>
         <section className="hero tone-0" ref={heroRef}>
+          {topic && <Ambient key={`amb-${topic.slug}`} topic={topic} />}
           <Sticker kind="struck" speed={1.4} className="st-h1" />
           <Sticker kind="grid" speed={0.8} className="st-h2" />
           <Sticker kind="dot" speed={2} className="st-h3" />

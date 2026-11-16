@@ -2,6 +2,11 @@ import { useEffect, useRef } from "react";
 import type { MutableRefObject } from "react";
 import * as THREE from "three";
 import { RoundedBoxGeometry } from "three/examples/jsm/geometries/RoundedBoxGeometry.js";
+import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
+import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
+import { OutputPass } from "three/examples/jsm/postprocessing/OutputPass.js";
 import gsap from "gsap";
 
 export type Cube = { layer: number; out: boolean; rank: number; delay: number };
@@ -10,15 +15,6 @@ const ease = (t: number) => (t <= 0 ? 0 : t >= 1 ? 1 : t * t * (3 - 2 * t));
 const span = (t: number, a: number, b: number) => ease((t - a) / (b - a));
 const mix = (a: number, b: number, t: number) => a + (b - a) * t;
 const bounce = gsap.parseEase("bounce.out");
-
-export function canWebGL() {
-  try {
-    const c = document.createElement("canvas");
-    return !!(c.getContext("webgl2") || c.getContext("webgl"));
-  } catch {
-    return false;
-  }
-}
 
 /** Slot j of a stepped pyramid whose bottom level is base x base cubes. */
 function pyramid(j: number, base: number): [number, number, number] {
@@ -44,7 +40,7 @@ function rng(seed: number) {
  * pyramids (the three approaches everyone gets), then shrink into a row at the back; each new
  * round drops in as its own pyramid and the rule-breakers are knocked off the top.
  */
-export function Stage3D({ cubes, layers, progress }: { cubes: Cube[]; layers: number; progress: MutableRefObject<number> }) {
+export default function Stage3D({ cubes, layers, progress, ambient = false }: { cubes: Cube[]; layers: number; progress: MutableRefObject<number>; ambient?: boolean }) {
   const mount = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -54,13 +50,17 @@ export function Stage3D({ cubes, layers, progress }: { cubes: Cube[]; layers: nu
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.15;
+    renderer.toneMapping = THREE.NoToneMapping; // page colours must match the canvas exactly
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 200);
-    scene.add(new THREE.HemisphereLight(0xffffff, 0x8fbbc3, 1.5));
-    const sun = new THREE.DirectionalLight(0xffffff, 2.6);
+    // studio reflections, so the cubes read as glazed objects and not flat colour
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    const env = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    scene.environment = env;
+    scene.environmentIntensity = 0.3;
+    scene.add(new THREE.HemisphereLight(0xffffff, 0x8fbbc3, 0.9));
+    const sun = new THREE.DirectionalLight(0xffffff, 1.7);
     sun.position.set(-9, 20, 12);
     sun.castShadow = true;
     sun.shadow.mapSize.set(2048, 2048);
@@ -68,7 +68,7 @@ export function Stage3D({ cubes, layers, progress }: { cubes: Cube[]; layers: nu
     sun.shadow.radius = 6;
     sun.shadow.bias = -0.0004;
     scene.add(sun);
-    const rim = new THREE.DirectionalLight(0xff9ccd, 0.9);
+    const rim = new THREE.DirectionalLight(0xff9ccd, 0.7);
     rim.position.set(12, 6, -10);
     scene.add(rim);
 
@@ -77,8 +77,8 @@ export function Stage3D({ cubes, layers, progress }: { cubes: Cube[]; layers: nu
     ground.receiveShadow = true;
     scene.add(ground);
 
-    const geo = new RoundedBoxGeometry(1, 1, 1, 3, 0.1);
-    const mat = new THREE.MeshStandardMaterial({ roughness: 0.42, metalness: 0.05 });
+    const geo = new RoundedBoxGeometry(1, 1, 1, 4, 0.13);
+    const mat = new THREE.MeshPhysicalMaterial({ roughness: 0.3, metalness: 0.0, clearcoat: 1, clearcoatRoughness: 0.14 });
     const mesh = new THREE.InstancedMesh(geo, mat, cubes.length);
     mesh.castShadow = true;
     mesh.receiveShadow = true;
@@ -130,11 +130,33 @@ export function Stage3D({ cubes, layers, progress }: { cubes: Cube[]; layers: nu
     let w = 0;
     let h = 0;
     let seen = true;
+    const pointer = { x: 0, y: 0, sx: 0, sy: 0 };
+    const onPointer = (e: PointerEvent) => {
+      pointer.x = (e.clientX / window.innerWidth - 0.5) * 2;
+      pointer.y = (e.clientY / window.innerHeight - 0.5) * 2;
+    };
+    window.addEventListener("pointermove", onPointer, { passive: true });
+
+    // glow on the dark final stage only; skipped on small screens and in the hero
+    const fancy = !ambient && window.matchMedia("(min-width: 900px)").matches;
+    const TONES = ["#f1f4f2", "#d2e3e2", "#8fbbc3", "#0f3d52"].map((c) => new THREE.Color(c));
+    const bg = new THREE.Color();
+    let composer: EffectComposer | null = null;
+    let bloom: UnrealBloomPass | null = null;
+    if (fancy) {
+      composer = new EffectComposer(renderer);
+      composer.addPass(new RenderPass(scene, camera));
+      bloom = new UnrealBloomPass(new THREE.Vector2(256, 256), 0, 0.7, 0.72);
+      composer.addPass(bloom);
+      composer.addPass(new OutputPass());
+      scene.background = bg;
+    }
 
     const size = () => {
       w = canvas.clientWidth;
       h = canvas.clientHeight;
       renderer.setSize(w, h, false);
+      composer?.setSize(w, h);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
     };
@@ -206,12 +228,19 @@ export function Stage3D({ cubes, layers, progress }: { cubes: Cube[]; layers: nu
       // camera: a slow orbit that pushes in on the last survivors
       const narrow = w / h < 0.9;
       const zoom = last ? span(t, 0.72, 0.95) : 0;
-      const dist = (narrow ? 96 : 40) - (seg > 0 ? (narrow ? 44 : 9) : 0) - zoom * (narrow ? 10 : 5);
-      const angle = Math.sin(time * 0.15) * 0.07 + (p - 0.5) * 0.7;
-      camera.position.set(Math.sin(angle) * dist, (narrow ? 20 : 13) - zoom * 2, Math.cos(angle) * dist);
-      target.set(0, (narrow ? 13 : 4.6) - (seg > 0 ? (narrow ? 5 : 0.8) : 0), 0);
+      pointer.sx += (pointer.x - pointer.sx) * 0.05;
+      pointer.sy += (pointer.y - pointer.sy) * 0.05;
+      const dist = ambient ? 34 : (narrow ? 96 : 40) - (seg > 0 ? (narrow ? 44 : 9) : 0) - zoom * (narrow ? 10 : 5);
+      const angle = Math.sin(time * 0.15) * 0.07 + (ambient ? 0 : (p - 0.5) * 0.7) + pointer.sx * 0.1;
+      camera.position.set(Math.sin(angle) * dist, (narrow ? 20 : 13) - zoom * 2 - pointer.sy * 1.6, Math.cos(angle) * dist);
+      target.set(ambient ? -7 : 0, ambient ? 2.6 : (narrow ? 13 : 4.6) - (seg > 0 ? (narrow ? 5 : 0.8) : 0), 0);
       camera.lookAt(target);
-      renderer.render(scene, camera);
+      if (composer && bloom) {
+        if (seg === 0) bg.copy(TONES[0]);
+        else bg.lerpColors(TONES[Math.min(seg - 1, 3)], TONES[Math.min(seg, 3)], span(t, 0, 0.3));
+        bloom.strength = dark * 0.55;
+        composer.render();
+      } else renderer.render(scene, camera);
     };
     gsap.ticker.add(frame);
     window.addEventListener("resize", size);
@@ -219,6 +248,10 @@ export function Stage3D({ cubes, layers, progress }: { cubes: Cube[]; layers: nu
       gsap.ticker.remove(frame);
       window.removeEventListener("resize", size);
       io.disconnect();
+      window.removeEventListener("pointermove", onPointer);
+      env.dispose();
+      pmrem.dispose();
+      composer?.dispose();
       geo.dispose();
       mat.dispose();
       renderer.dispose();

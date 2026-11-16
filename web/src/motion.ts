@@ -44,3 +44,12 @@ export function watchReveals(root: ParentNode = document) {
   items.forEach((el) => io.observe(el));
   return () => io.disconnect();
 }
+
+export function canWebGL() {
+  try {
+    const c = document.createElement("canvas");
+    return !!(c.getContext("webgl2") || c.getContext("webgl"));
+  } catch {
+    return false;
+  }
+}

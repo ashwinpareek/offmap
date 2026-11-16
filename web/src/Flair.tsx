@@ -258,3 +258,83 @@ export function magnetize() {
     document.removeEventListener("mouseout", out);
   };
 }
+
+/* ── a cursor with weight: a dot, and a ring that lags behind and names what you are over ── */
+const CURSOR_LABELS: [string, string][] = [
+  [".cell", "Read"],
+  [".copy", "Copy"],
+  [".go", "Check"],
+  [".deal-go, .pill a, .gauge-ticks button", "Go"],
+  [".ideas li", "Idea"],
+  ["a[target=_blank]", "Open"],
+  ["button, a", ""],
+];
+
+export function Cursor() {
+  const dot = useRef<HTMLDivElement>(null);
+  const ring = useRef<HTMLDivElement>(null);
+  const [text, setText] = useState("");
+  useEffect(() => {
+    if (calm() || !window.matchMedia("(hover: hover) and (pointer: fine)").matches || !dot.current || !ring.current) return;
+    document.documentElement.classList.add("has-cursor");
+    const dx = gsap.quickTo(dot.current, "x", { duration: 0.08 });
+    const dy = gsap.quickTo(dot.current, "y", { duration: 0.08 });
+    const rx = gsap.quickTo(ring.current, "x", { duration: 0.55, ease: "power3" });
+    const ry = gsap.quickTo(ring.current, "y", { duration: 0.55, ease: "power3" });
+    const move = (e: PointerEvent) => {
+      dx(e.clientX);
+      dy(e.clientY);
+      rx(e.clientX);
+      ry(e.clientY);
+      const el = e.target as HTMLElement;
+      const hit = CURSOR_LABELS.find(([sel]) => el.closest?.(sel));
+      ring.current!.classList.toggle("is-over", !!hit);
+      ring.current!.classList.toggle("is-named", !!hit?.[1]);
+      setText(hit?.[1] ?? "");
+    };
+    const leave = () => ring.current?.classList.add("is-away");
+    const enter = () => ring.current?.classList.remove("is-away");
+    window.addEventListener("pointermove", move, { passive: true });
+    document.addEventListener("mouseleave", leave);
+    document.addEventListener("mouseenter", enter);
+    return () => {
+      document.documentElement.classList.remove("has-cursor");
+      window.removeEventListener("pointermove", move);
+      document.removeEventListener("mouseleave", leave);
+      document.removeEventListener("mouseenter", enter);
+    };
+  }, []);
+  return (
+    <>
+      <div className="cursor-ring" ref={ring} aria-hidden="true">
+        <span>{text}</span>
+      </div>
+      <div className="cursor-dot" ref={dot} aria-hidden="true" />
+    </>
+  );
+}
+
+/** Cards lean toward the pointer and carry a soft spotlight where it is. */
+export function tiltCards() {
+  if (calm() || !window.matchMedia("(hover: hover)").matches) return () => {};
+  const move = (e: PointerEvent) => {
+    const card = (e.target as HTMLElement).closest?.<HTMLElement>(".deal-card");
+    if (!card) return;
+    const r = card.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width;
+    const py = (e.clientY - r.top) / r.height;
+    card.style.setProperty("--mx", `${px * 100}%`);
+    card.style.setProperty("--my", `${py * 100}%`);
+    gsap.to(card, { "--tx": `${(0.5 - py) * 9}deg`, "--ty": `${(px - 0.5) * 9}deg`, duration: 0.4, overwrite: "auto" });
+  };
+  const out = (e: PointerEvent) => {
+    const card = (e.target as HTMLElement).closest?.<HTMLElement>(".deal-card");
+    if (card && !card.contains(e.relatedTarget as Node)) gsap.to(card, { "--tx": "0deg", "--ty": "0deg", duration: 0.8, ease: "elastic.out(1, 0.5)" });
+  };
+  document.addEventListener("pointermove", move, { passive: true });
+  document.addEventListener("pointerout", out);
+  return () => {
+    document.removeEventListener("pointermove", move);
+    document.removeEventListener("pointerout", out);
+  };
+}

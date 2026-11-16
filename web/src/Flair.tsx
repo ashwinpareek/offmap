@@ -23,7 +23,9 @@ export function PillNav({ ready }: { ready: boolean }) {
     if (!ready) return;
     const triggers = STOPS.map(([id], i) => {
       const el = document.getElementById(id);
-      return el && ScrollTrigger.create({ trigger: el, start: "top 55%", end: "bottom 55%", onToggle: (s) => s.isActive && setActive(i) });
+      const next = STOPS[i + 1] && document.getElementById(STOPS[i + 1][0]);
+      // a stop stays active until the next stop begins, so the scenes in between keep their marker
+      return el && ScrollTrigger.create({ trigger: el, start: "top 55%", endTrigger: next || el, end: next ? "top 55%" : "bottom 55%", onToggle: (s) => s.isActive && setActive(i) });
     });
     // later stops run to the next stop, not just their own box
     return () => triggers.forEach((t) => t && t.kill());

@@ -7,7 +7,7 @@ import { LayerSection } from "./LayerSection";
 import { Place } from "./Place";
 import { list } from "./lib";
 import { Wave, Words, startScrollFx } from "./Fx";
-import { Descent } from "./Descent";
+import { Story } from "./Story";
 import { Marquee, Paint, PillNav, ScrubText, Sticker, Uses, magnetize, useParallax } from "./Flair";
 import { calm, startSmoothScroll, watchReveals } from "./motion";
 
@@ -190,7 +190,7 @@ export default function App() {
               />
             )}
 
-            {!calm() && <Descent key={`descent-${topic.slug}`} topic={topic} />}
+            {!calm() && <Story key={`story-${topic.slug}`} topic={topic} />}
 
             <Uses
               items={[

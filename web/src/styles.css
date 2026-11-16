@@ -826,3 +826,55 @@ h3, .gauge-name, .legend-count, .ideas h4, .bar.is-common .bar-name, label { fon
 .cine-veil { background: radial-gradient(60% 34% at 50% 44%, rgba(4, 8, 16, 0.72) 0%, rgba(4, 8, 16, 0.4) 55%, rgba(4, 8, 16, 0) 100%), linear-gradient(180deg, rgba(6, 10, 18, 0.25) 0%, rgba(6, 10, 18, 0) 22%, rgba(6, 10, 18, 0) 55%, #050a14 100%); }
 .cine-sub { color: #c3cbd9; text-shadow: 0 1px 18px rgba(2, 6, 14, 0.9); }
 .cine-title { text-shadow: 0 2px 30px rgba(2, 6, 14, 0.75); }
+
+/* ── tray → sentence flight ── */
+.flight { padding-block: clamp(80px, 14vh, 170px); overflow: hidden; }
+.fl-panel { position: relative; max-width: 1180px; margin: 0 auto; padding: 26px 30px 34px; border-radius: 34px; border: 1px solid var(--hair); background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02)), #0a1322; box-shadow: 0 40px 80px rgba(2, 6, 14, 0.6), inset 0 1px 0 rgba(255, 251, 242, 0.14); }
+.fl-ruler, .fl-lane { display: grid; grid-template-columns: repeat(5, 1fr); }
+.fl-ruler { font-size: 0.8125rem; color: #a2a9b8; font-variation-settings: "wght" 520; padding-bottom: 14px; border-bottom: 1px solid var(--hair); }
+.fl-lane { margin-top: 22px; padding: 18px 0; border-radius: 16px; background: rgba(255, 255, 255, 0.04); }
+.fl-slot { width: clamp(64px, 9vw, 118px); aspect-ratio: 1; margin-left: 8%; display: block; }
+.fl-block { display: block; width: 100%; height: 100%; will-change: transform; position: relative; z-index: 3; }
+.fl-head { position: absolute; top: 20px; bottom: 22px; left: 30px; width: 2px; background: #ffd08c; box-shadow: 0 0 18px #ffd08c; animation: fl-sweep 7s linear infinite; z-index: 4; }
+@keyframes fl-sweep { to { left: calc(100% - 30px); } }
+.fl-tile { display: grid; width: 100%; height: 100%; border-radius: 26%; overflow: hidden; position: relative; box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.35), 0 10px 26px rgba(2, 6, 14, 0.5); }
+.fl-t0 { background: #0d1f3d; grid-template-columns: repeat(3, 1fr); gap: 7%; padding: 16%; }
+.fl-t0 i { background: #ffd08c; } .fl-t0 i:nth-child(n + 5) { background: #7fb4ff; } .fl-t0 i:nth-child(n + 8) { background: #35568c; }
+.fl-t1 { background: repeating-radial-gradient(circle at 38% 42%, #0a172d 0 7%, #ffd08c 7% 8.4%, #0a172d 8.4% 15%, #7fb4ff 15% 16%); }
+.fl-t2 { background: #ffd08c; place-items: center; } .fl-t2 i { width: 130%; height: 9%; background: #050a14; transform: rotate(-45deg); }
+.fl-t3 { background: linear-gradient(180deg, #1c3a6e, #050a14); align-content: end; gap: 7%; padding: 14%; } .fl-t3 i { height: 9px; background: #7fb4ff; opacity: 0.9; } .fl-t3 i:nth-child(2) { opacity: 0.65; margin-inline: 8%; } .fl-t3 i:nth-child(3) { opacity: 0.4; margin-inline: 18%; } .fl-t3 i:nth-child(4) { background: #ffd08c; opacity: 1; margin-inline: 30%; }
+.fl-t4 { background: radial-gradient(circle at 68% 66%, #fff 0 6%, #ffd9a0 9%, rgba(255, 208, 140, 0.35) 22%, #07101f 46%); } .fl-t4 i { position: absolute; left: 14%; top: 14%; width: 42%; height: 42%; border: 2px solid rgba(244, 248, 253, 0.8); }
+.fl-say { margin: clamp(90px, 16vh, 190px) auto 0; max-width: 21em; text-align: center; font-size: clamp(1.6rem, 3.9vw, 3.7rem); line-height: 1.16; letter-spacing: -0.02em; font-variation-settings: "wght" 400; text-wrap: balance; }
+.fl-hole { display: inline-block; width: 1em; height: 1em; margin: 0.1em 0.16em -0.16em; }
+
+/* ── idea cards on a cylinder ── */
+.carousel { position: relative; height: 100vh; min-height: 640px; overflow: hidden; background: #000; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; }
+.carousel-copy { padding-left: var(--pad); position: relative; z-index: 2; max-width: 30rem; }
+.carousel-copy h2 { font-size: clamp(2rem, 4vw, 3.6rem); }
+.carousel-copy p { margin-top: 18px; color: #a2a9b8; font-size: 1.0625rem; }
+.carousel-stage { position: relative; height: 100%; display: flex; align-items: center; justify-content: center; perspective: 1350px; pointer-events: none; }
+.carousel-hub { position: relative; transform-style: preserve-3d; }
+.icard { position: absolute; inset: 0; transform-style: preserve-3d; }
+.icard-mid, .icard-face { position: absolute; inset: 0; border-radius: 18px; }
+.icard-mid { background: #8f8a80; }
+.icard-face { backface-visibility: hidden; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.16); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.18); color: #fff; }
+.icard-front { padding: 7% 7% 6%; display: flex; flex-direction: column; background: radial-gradient(120% 90% at 0% 0%, rgba(255, 208, 140, 0.34), transparent 55%), radial-gradient(120% 90% at 100% 100%, rgba(127, 180, 255, 0.36), transparent 55%), #0b1424; }
+.icard-no { font-size: 0.75rem; letter-spacing: 0.16em; color: #ffd9a0; font-variation-settings: "wght" 560; }
+.icard-front h3 { margin-top: 6px; font-size: clamp(1.2rem, 1.9vw, 1.7rem); line-height: 1.1; font-variation-settings: "wght" 500; letter-spacing: -0.02em; }
+.icard-front p { margin-top: 10px; font-size: 0.8125rem; line-height: 1.45; color: #c3cbd9; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }
+.icard-foot { margin-top: auto; display: flex; justify-content: space-between; gap: 12px; font-size: 0.6875rem; color: #a2a9b8; } .icard-foot b { color: #fff; font-weight: inherit; font-variation-settings: "wght" 560; }
+.icard-back { background: radial-gradient(120% 90% at 100% 0%, rgba(127, 180, 255, 0.45), transparent 60%), radial-gradient(120% 90% at 0% 100%, rgba(255, 208, 140, 0.4), transparent 60%), #0b1424; }
+.icard-stripe { position: absolute; left: 0; right: 0; top: 12%; height: 17%; background: rgba(0, 0, 0, 0.85); }
+.icard-code { position: absolute; left: 7%; bottom: 9%; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.6875rem; letter-spacing: 0.14em; color: rgba(255, 255, 255, 0.8); }
+.carousel-list { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@media (max-width: 900px) {
+  .carousel { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr; }
+  .carousel-copy { padding: 76px var(--pad) 0; }
+  .fl-panel { padding: 16px 14px 20px; border-radius: 22px; } .fl-ruler { font-size: 0.625rem; } .fl-slot { margin-left: 6%; }
+}
+
+.icard-front p.is-long { -webkit-line-clamp: 8; font-size: 0.875rem; margin-top: 12px; }
+@media (max-width: 900px) {
+  .carousel-copy { z-index: 2000; padding-bottom: 26px; background: linear-gradient(180deg, #000 70%, transparent); }
+  .carousel-stage { margin-top: -40px; }
+}

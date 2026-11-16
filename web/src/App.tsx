@@ -9,7 +9,8 @@ import { list } from "./lib";
 import { Wave, Words, startScrollFx } from "./Fx";
 import { Story } from "./Story";
 import { Cine } from "./Cine";
-import { Cursor, Marquee, Paint, PillNav, ScrubText, Uses, magnetize, tiltCards, useParallax } from "./Flair";
+import { Flight, IdeaCarousel } from "./Showpieces";
+import { Cursor, Marquee, Paint, PillNav, Uses, magnetize, tiltCards, useParallax } from "./Flair";
 import { calm, startSmoothScroll, watchReveals } from "./motion";
 
 const topics = indexJson as TopicIndex;
@@ -162,9 +163,7 @@ export default function App() {
           <>
             <Marquee names={surface!.ideas.map((i) => i.n).filter((n): n is string => !!n)} />
 
-            <ScrubText
-              text={`Pick a topic. Offmap asks three AI models the same question again and again, finds the answers they all fall back on, rules those out and asks again. What is left are the ideas past the obvious ones, each one checked before you see it.`}
-            />
+            <Flight key={`flight-${topic.slug}`} topic={topic} />
 
             {!calm() && (
               <Paint
@@ -175,6 +174,8 @@ export default function App() {
             )}
 
             {!calm() && <Story key={`story-${topic.slug}`} topic={topic} />}
+
+            <IdeaCarousel key={`car-${topic.slug}`} topic={topic} />
 
             <Uses
               items={[

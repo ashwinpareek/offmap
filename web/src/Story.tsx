@@ -6,11 +6,11 @@ import { ScrollSequence } from "./ScrollSequence";
 import type { Draw } from "./ScrollSequence";
 import { calm } from "./motion";
 
-const TONES = ["#f1f4f2", "#d2e3e2", "#8fbbc3", "#0f3d52"];
-const INK = "#0a2230";
-const FOAM = "#eaf3f2";
-const PINK = "#c2247a";
-const PINK_LIGHT = "#ff9ccd";
+const TONES = ["#050a14", "#07101f", "#0a172d", "#0d1f3d"];
+const INK = "#dfe9f7";
+const FOAM = "#f4f8fd";
+const PINK = "#ffd08c";
+const PINK_LIGHT = "#ffd9a0";
 const COLS = 88;
 const ROWS = 56;
 
@@ -54,7 +54,7 @@ function heightAt(sheet: Sheet, x: number, y: number, aspect: number) {
 }
 
 /** Draw the contour lines of a height grid with marching squares. */
-function contours(ctx: CanvasRenderingContext2D, grid: Float32Array, x0: number, y0: number, cw: number, ch: number, levels: number[], colour: string, reveal: number) {
+function contours(ctx: CanvasRenderingContext2D, grid: Float32Array, x0: number, y0: number, cw: number, ch: number, levels: number[], colour: string, reveal: number, gold = colour) {
   const lerp = (a: number, b: number, lv: number) => (lv - a) / (b - a);
   levels.forEach((lv, li) => {
     const index = li % 4 === 3;
@@ -88,8 +88,8 @@ function contours(ctx: CanvasRenderingContext2D, grid: Float32Array, x0: number,
         else if (k === 10) (seg(L, B), seg(T, R));
       }
     }
-    ctx.strokeStyle = colour;
-    ctx.globalAlpha = index ? 0.85 : 0.38;
+    ctx.strokeStyle = index ? gold : colour;
+    ctx.globalAlpha = index ? 0.9 : 0.42;
     ctx.lineWidth = index ? 1.5 : 1;
     ctx.stroke();
   });
@@ -146,7 +146,7 @@ function makeDraw(topic: Topic, sheets: Sheet[], ambient: boolean): Draw {
     ctx.rect(mx, my, mw, mh);
     ctx.clip();
     ctx.globalAlpha = ambient ? 0.6 : 1;
-    contours(ctx, grid, mx, my, mw / (COLS - 1), mh / (ROWS - 1), levels, fg, Math.max(reveal, seg === 0 && !ambient ? 0.02 : 1.05));
+    contours(ctx, grid, mx, my, mw / (COLS - 1), mh / (ROWS - 1), levels, "#7fb4ff", Math.max(reveal, seg === 0 && !ambient ? 0.02 : 1.05), accent);
     ctx.restore();
     if (ambient) return;
 
@@ -174,7 +174,7 @@ function makeDraw(topic: Topic, sheets: Sheet[], ambient: boolean): Draw {
     }
     ctx.stroke();
     ctx.globalAlpha = 0.75;
-    ctx.font = `600 ${narrow ? 10 : 12}px "Schibsted Grotesk Variable", sans-serif`;
+    ctx.font = `600 ${narrow ? 10 : 12}px "Sora Variable", sans-serif`;
     ctx.textAlign = "left";
     ctx.fillText(`Sheet ${seg}. ${depthName(seg)}`, mx, my - 16);
     ctx.textAlign = "right";
@@ -203,7 +203,7 @@ function makeDraw(topic: Topic, sheets: Sheet[], ambient: boolean): Draw {
         const lx = flip ? x - 10 - tw : x + 10;
         ctx.textAlign = "left";
         ctx.fillText(pk.name, lx, y + 2);
-        ctx.font = `650 ${(narrow ? 10 : 12) * shrink}px "Schibsted Grotesk Variable", sans-serif`;
+        ctx.font = `650 ${(narrow ? 10 : 12) * shrink}px "Sora Variable", sans-serif`;
         ctx.fillText(`${pk.count} of ${pk.of}`, lx, y + 2 + size);
         if (struck > 0) {
           ctx.strokeStyle = accent;

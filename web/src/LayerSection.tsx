@@ -4,7 +4,7 @@ import { depthName, label, list, lower, plural } from "./lib";
 import { scrollToId } from "./motion";
 import { Count, Typed, Wave, Words } from "./Fx";
 
-const TONE_FILL = ["#f1f4f2", "#d2e3e2", "#8fbbc3", "#0f3d52"];
+const TONE_FILL = ["#050a14", "#07101f", "#0a172d", "#0d1f3d"];
 
 const HEADINGS = [
   "What everyone gets",

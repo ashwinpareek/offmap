@@ -7,8 +7,9 @@ import { LayerSection } from "./LayerSection";
 import { Place } from "./Place";
 import { list } from "./lib";
 import { Wave, Words, startScrollFx } from "./Fx";
-import { ContourBg, Story } from "./Story";
-import { Cursor, Marquee, Paint, PillNav, ScrubText, Sticker, Uses, magnetize, tiltCards, useParallax } from "./Flair";
+import { Story } from "./Story";
+import { Cine } from "./Cine";
+import { Cursor, Marquee, Paint, PillNav, ScrubText, Uses, magnetize, tiltCards, useParallax } from "./Flair";
 import { calm, startSmoothScroll, watchReveals } from "./motion";
 
 const topics = indexJson as TopicIndex;
@@ -117,31 +118,10 @@ export default function App() {
       </header>
 
       <main>
-        <section className="hero tone-0" ref={heroRef}>
-          {topic && <ContourBg key={`bg-${topic.slug}`} topic={topic} />}
-          <Sticker kind="struck" speed={1.4} className="st-h1" />
-          <Sticker kind="grid" speed={0.8} className="st-h2" />
-          <Sticker kind="dot" speed={2} className="st-h3" />
-          <div className="wrap">
-            <h1 className="words">
-              {["Every AI gives", "everyone the", "same idea."].map((line, li) => (
-                <span className="wl" key={line}>
-                  {line.split(" ").map((w, wi) => (
-                    <span className="w" key={w + wi}>
-                      <span style={{ ["--i" as string]: li * 3 + wi }}>{w}</span>
-                    </span>
-                  ))}
-                </span>
-              ))}
-              <span className="wl wl-pink">
-                {"Offmap digs past it.".split(" ").map((w, wi) => (
-                  <span className="w" key={w + wi}>
-                    <span style={{ ["--i" as string]: 9 + wi }}>{w}</span>
-                  </span>
-                ))}
-              </span>
-            </h1>
+        <Cine answers={surface?.stats.n ?? topics[0].n} models={topic?.models.length ?? 3} kept={topic ? topic.layers[topic.layers.length - 1].kept : 9} />
 
+        <section className="hero tone-0" ref={heroRef}>
+          <div className="wrap">
             {topics.length > 1 && (
               <div className="topics" role="radiogroup" aria-label="Topic">
                 {topics.map((t) => (
@@ -212,7 +192,7 @@ export default function App() {
             <Place key={`place-${topic.slug}`} topic={topic} />
 
             <section className="method tone-0" id="method">
-              <Wave fill="#08202d" />
+              <Wave fill="#030710" />
               <div className="wrap">
                 <Words text="How this was measured" />
                 <span className="steps-line" aria-hidden="true" />

@@ -157,7 +157,7 @@ export function Place({ topic }: { topic: Topic }) {
 
   return (
     <section className="place tone-4" id="place">
-      <Wave fill="#0f3d52" />
+      <Wave fill="#0d1f3d" />
       {!calm() && <DepthSlider topic={topic} />}
       <div className="wrap place-grid">
         <div>

@@ -164,7 +164,7 @@ export function Marquee({ names }: { names: string[] }) {
 
 /* ── pinned paint-over: diagonal strokes cover the screen, the line underneath changes, they wipe away ── */
 const ORDER = [0, 12, 2, 10, 4, 8, 6, 1, 11, 3, 9, 5, 7];
-const INKS = ["#c2247a", "#0f3d52", "#ff9ccd", "#2f6d80"];
+const INKS = ["#ffd08c", "#0d1f3d", "#7fb4ff", "#14294a"];
 
 export function Paint({ before, after, sub }: { before: string; after: string; sub: string }) {
   const root = useRef<HTMLElement>(null);
@@ -201,9 +201,9 @@ export function Paint({ before, after, sub }: { before: string; after: string; s
           <span>{sub}</span>
         </div>
         <svg className="paint-pops" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <rect className="paint-pop" x="220" y="150" width="90" height="90" fill="#c2247a" />
-          <rect className="paint-pop" x="1290" y="210" width="64" height="64" fill="#0a2230" />
-          <rect className="paint-pop" x="1160" y="640" width="110" height="110" fill="#ff9ccd" />
+          <rect className="paint-pop" x="220" y="150" width="90" height="90" fill="#ffd08c" />
+          <rect className="paint-pop" x="1290" y="210" width="64" height="64" fill="#7fb4ff" />
+          <rect className="paint-pop" x="1160" y="640" width="110" height="110" fill="#f4f8fd" />
         </svg>
         <svg className="paint-strokes" viewBox="0 0 1600 900" preserveAspectRatio="none" aria-hidden="true">
           {Array.from({ length: 13 }, (_, i) => (

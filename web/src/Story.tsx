@@ -1,9 +1,11 @@
-import { useCallback, useMemo, useRef } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import gsap from "gsap";
 import type { Topic } from "./types";
 import { depthName, label, plural } from "./lib";
 import { ScrollSequence } from "./ScrollSequence";
 import type { Draw } from "./ScrollSequence";
+import { Stage3D, canWebGL } from "./Stage3D";
+import type { Cube } from "./Stage3D";
 
 const TONES = ["#f1f4f2", "#d2e3e2", "#8fbbc3", "#0f3d52"];
 const INK = "#0a2230";
@@ -32,6 +34,17 @@ export function Story({ topic }: { topic: Topic }) {
   const layers = topic.layers;
   const n = layers.length;
   const stage = useRef<HTMLDivElement>(null);
+  const prog = useRef(0);
+  const [gl] = useState(canWebGL);
+  const cubes = useMemo<Cube[]>(() => {
+    const top = layers[0].stats.primary.slice(0, 3).map(([t]) => t);
+    const out: Cube[] = layers[0].ideas.map((idea, k) => ({ layer: 0, out: false, rank: top.indexOf(idea.k[0]) < 0 ? 3 : top.indexOf(idea.k[0]), delay: ((k * 37) % 100) / 285 }));
+    layers.slice(1).forEach((l) => {
+      const total = l.kept + l.dropped + l.untagged;
+      for (let j = 0; j < total; j++) out.push({ layer: l.depth, out: j >= l.kept, rank: 0, delay: ((j * 53) % 100) / 330 });
+    });
+    return out;
+  }, [layers]);
 
   const { dots, clumps } = useMemo(() => {
     const rand = rng(11);
@@ -176,6 +189,7 @@ export function Story({ topic }: { topic: Topic }) {
 
   const onProgress = useCallback(
     (p: number) => {
+      prog.current = p;
       const el = stage.current;
       if (!el) return;
       const seg = Math.min(n - 1, Math.floor(p * n));
@@ -201,7 +215,8 @@ export function Story({ topic }: { topic: Topic }) {
 
   const deepest = layers[n - 1];
   return (
-    <ScrollSequence length={n * 1.5 + 0.5} draw={draw} onProgress={onProgress} className="story" label="How Offmap works, step by step">
+    <ScrollSequence length={n * 1.5 + 0.5} draw={gl ? undefined : draw} onProgress={onProgress} className="story" label="How Offmap works, step by step">
+      {gl && <Stage3D cubes={cubes} layers={n} progress={prog} />}
       <div className="wrap story-over" ref={stage}>
         <p className="story-num" aria-hidden="true">
           0
@@ -210,7 +225,7 @@ export function Story({ topic }: { topic: Topic }) {
           <div className="story-cap">
             <h2>Ask the plain question and the answers pile up.</h2>
             <p>
-              {layers[0].stats.n} answers, one dot each. {layers[0].stats.top3} of them gather in the same three places. Keep scrolling.
+              {layers[0].stats.n} answers, one cube each. {layers[0].stats.top3} of them stack into the same three piles. Keep scrolling.
             </p>
           </div>
           {layers.slice(1).map((l) => (
